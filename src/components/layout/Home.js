@@ -762,7 +762,7 @@ export default function Home() {
                                     nextEl: '#history-carousel .swiper-button-next',
                                 }}
                                 loop
-                                autoplay={{ delay: 5000 }}
+                                // autoplay={{ delay: 5000 }}
                                 onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                                 breakpoints={{
                                     0: { slidesPerView: 1 },
