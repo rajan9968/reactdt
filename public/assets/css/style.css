@@ -1322,3 +1322,48 @@ header.shrink {
   text-decoration: none !important;
   color: #fff;
 }
+
+.team-card {
+  transition: all 0.3s ease;
+  background-color: #E6FFF6 !important;
+  height: 42em;
+}
+
+.team-card:hover {
+  background-color: #02A683 !important;
+  color: #fff;
+}
+
+.team-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.position-unset {
+  position: unset;
+  padding: 0;
+}
+
+.leader-section .nav-pills .nav-link.active,
+.leader-section .nav-pills .show>.nav-link {
+  background: unset;
+  color: #000;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+.leader-section .nav-pills .nav-link {
+  background: unset;
+  color: #000;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.team-name {
+  padding: 2em;
+}
+
+.team-card:hover .team-name h5 p {
+  color: #fff;
+}
