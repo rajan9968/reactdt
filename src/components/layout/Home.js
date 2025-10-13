@@ -42,11 +42,6 @@ export default function Home() {
 
     const offcanvasRef = useRef(null);
 
-    const openOffcanvas = (e) => {
-        e.preventDefault();
-        offcanvasRef.current.classList.add("show");
-    };
-
     const closeOffcanvas = () => {
         const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasRef.current);
         if (bsOffcanvas) {
@@ -70,6 +65,84 @@ export default function Home() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    const slidesData = [
+        {
+            bg: "./assets/images/banner.png",
+            title: "Empowering Tomorrow with Sustainable Solutions",
+            stats: [
+                { number: "13 GW +", label: "Experience in\nPre-Development EPC" },
+                { number: "55000+", label: "Acres of land acquired\nfor solar projects" },
+                { number: "4GW", label: "Solar Park\nCapacity" },
+            ],
+        },
+        {
+            bg: "./assets/images/banner-2.png",
+            title: "Empowering Tomorrow with Sustainable Solutions",
+            stats: [
+                { number: "50 +", label: "Projects Completed\nin IndiaC" },
+                { number: "5", label: "States Presence\nin India" },
+                {
+                    number: "XX", label: "Marquee\nclients"
+                },
+            ],
+        },
+        {
+            bg: "./assets/images/banner.png",
+            title: "Empowering Tomorrow with Sustainable Solutions",
+            stats: [
+                { number: "13 GW +", label: "Experience in\nPre-Development EPC" },
+                { number: "55000+", label: "Acres of land acquired\nfor solar projects" },
+                { number: "4GW", label: "Solar Park\nCapacity" },
+            ],
+        },
+    ];
+
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const slideInterval = useRef(null);
+    const sliderRef = useRef(null);
+
+    const totalSlides = slidesData.length;
+
+    const showSlide = (n) => {
+        setCurrentSlide((n + totalSlides) % totalSlides);
+    };
+
+    const nextSlide = () => showSlide(currentSlide + 1);
+    const prevSlide = () => showSlide(currentSlide - 1);
+
+    // Auto slide
+    useEffect(() => {
+        slideInterval.current = setInterval(nextSlide, 3000);
+        return () => clearInterval(slideInterval.current);
+    }, [currentSlide]);
+
+    // Pause on hover
+    useEffect(() => {
+        const sliderEl = sliderRef.current;
+        if (!sliderEl) return;
+
+        const handleMouseEnter = () => clearInterval(slideInterval.current);
+        const handleMouseLeave = () => (slideInterval.current = setInterval(nextSlide, 5000));
+
+        sliderEl.addEventListener("mouseenter", handleMouseEnter);
+        sliderEl.addEventListener("mouseleave", handleMouseLeave);
+
+        return () => {
+            sliderEl.removeEventListener("mouseenter", handleMouseEnter);
+            sliderEl.removeEventListener("mouseleave", handleMouseLeave);
+        };
+    }, [currentSlide]);
+
+    // Keyboard navigation
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === "ArrowLeft") prevSlide();
+            if (e.key === "ArrowRight") nextSlide();
+        };
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    });
     const slides = [
         {
             title: "4 GW | Solar",
@@ -375,123 +448,51 @@ export default function Home() {
             </div>
             <main>
                 <section className="top-banner">
-                    <div className="slider-container">
-                        {/* Slide 1 */}
-                        <div
-                            className="slide active"
-                            style={{ backgroundImage: 'url("./assets/images/banner.png")' }}
-                        >
-                            <div className="slide-content">
-                                <h1 className="slide-title">
-                                    Empowering Tomorrow with Sustainable Solutions
-                                </h1>
-                                <div className="stats-container">
-                                    <div className="stat-item">
-                                        <div className="stat-number">13 GW +</div>
-                                        <div className="stat-label">
-                                            Experience in
-                                            <br />
-                                            Pre-Development EPC
-                                        </div>
-                                    </div>
-                                    <div className="stat-item">
-                                        <div className="stat-number">55000+</div>
-                                        <div className="stat-label">
-                                            Acres of land acquired
-                                            <br />
-                                            for solar projects
-                                        </div>
-                                    </div>
-                                    <div className="stat-item">
-                                        <div className="stat-number">4GW</div>
-                                        <div className="stat-label">
-                                            Solar Park
-                                            <br />
-                                            Capacity
-                                        </div>
+                    <div className="slider-container" ref={sliderRef}>
+                        {slidesData.map((slide, index) => (
+                            <div
+                                key={index}
+                                className={`slide ${index === currentSlide ? "active" : ""}`}
+                                style={{ backgroundImage: `url(${slide.bg})` }}
+                            >
+                                <div className="slide-content">
+                                    <h1 className="slide-title">{slide.title}</h1>
+                                    <div className="stats-container">
+                                        {slide.stats.map((stat, i) => (
+                                            <div key={i} className="stat-item">
+                                                <div className="stat-number">{stat.number}</div>
+                                                <div className="stat-label">
+                                                    {stat.label.split("\n").map((line, idx) => (
+                                                        <span key={idx}>
+                                                            {line}
+                                                            <br />
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        {/* Slide 2 */}
-                        <div
-                            className="slide"
-                            style={{ backgroundImage: 'url("./assets/images/banner.png")' }}
-                        >
-                            <div className="slide-content">
-                                <h1 className="slide-title">
-                                    Empowering Tomorrow with Sustainable Solutions
-                                </h1>
-                                <div className="stats-container">
-                                    <div className="stat-item">
-                                        <div className="stat-number">13 GW +</div>
-                                        <div className="stat-label">
-                                            Experience in
-                                            <br />
-                                            Pre-Development EPC
-                                        </div>
-                                    </div>
-                                    <div className="stat-item">
-                                        <div className="stat-number">55000+</div>
-                                        <div className="stat-label">
-                                            Acres of land acquired
-                                            <br />
-                                            for solar projects
-                                        </div>
-                                    </div>
-                                    <div className="stat-item">
-                                        <div className="stat-number">4GW</div>
-                                        <div className="stat-label">
-                                            Solar Park
-                                            <br />
-                                            Capacity
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Slide 3 */}
-                        <div
-                            className="slide"
-                            style={{ backgroundImage: 'url("./assets/images/banner.png")' }}
-                        >
-                            <div className="slide-content">
-                                <h1 className="slide-title">
-                                    Empowering Tomorrow with Sustainable Solutions
-                                </h1>
-                                <div className="stats-container">
-                                    <div className="stat-item">
-                                        <div className="stat-number">13 GW +</div>
-                                        <div className="stat-label">
-                                            Experience in
-                                            <br />
-                                            Pre-Development EPC
-                                        </div>
-                                    </div>
-                                    <div className="stat-item">
-                                        <div className="stat-number">55000+</div>
-                                        <div className="stat-label">
-                                            Acres of land acquired
-                                            <br />
-                                            for solar projects
-                                        </div>
-                                    </div>
-                                    <div className="stat-item">
-                                        <div className="stat-number">4GW</div>
-                                        <div className="stat-label">
-                                            Solar Park
-                                            <br />
-                                            Capacity
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Slider Navigation */}
+                        ))}
+
+                        {/* Navigation Arrows */}
+                        <button className="slider-arrow prev" onClick={prevSlide}>
+                            &#10094;
+                        </button>
+                        <button className="slider-arrow next" onClick={nextSlide}>
+                            &#10095;
+                        </button>
+
+                        {/* Dots */}
                         <div className="slider-nav">
-                            <div className="slider-dot active" id="prevBtn" data-slide={0} />
-                            <div className="slider-dot" id="nextBtn" data-slide={1} />
-                            <div className="slider-dot" data-slide={2} />
+                            {slidesData.map((_, index) => (
+                                <span
+                                    key={index}
+                                    className={`slider-dot ${index === currentSlide ? "active" : ""}`}
+                                    onClick={() => showSlide(index)}
+                                ></span>
+                            ))}
                         </div>
                     </div>
                 </section>
