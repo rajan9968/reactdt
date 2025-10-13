@@ -801,7 +801,7 @@ a {
 
 .footer {
   background: #02a986;
-  padding: 2em 0;
+  padding: 2em 0 1em 0;
 }
 
 .footer-menu {
@@ -1216,4 +1216,109 @@ header.shrink {
 
 .join-us .btn-design-new svg {
   max-width: 10%;
+}
+
+/* about  */
+
+.about-banner-caption {
+  position: absolute;
+  bottom: 4%;
+  z-index: 1;
+  height: 65%;
+  display: grid;
+  align-items: end;
+}
+
+.about-banner-caption h2 {
+  font-size: 4em;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.about-banner-caption ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.about-banner-caption ul li {
+  margin-right: 1em;
+}
+
+.about-banner-caption ul li a {
+  text-decoration: none !important;
+  color: #fff;
+}
+
+.about-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #02a38052;
+  z-index: 0;
+}
+
+.vision-section .card-custom {
+  height: 36em;
+}
+
+.vision-section .card-custom p {
+  padding: 0;
+}
+
+.core-values .card-custom p {
+  padding: 0;
+}
+
+.core-values .card-custom {
+  transition: all 0.4s ease-in-out;
+  width: 96%;
+}
+
+.core-values .card-custom:hover {
+  background-image: url('../images/core-value.png');
+  object-fit: cover;
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+
+.copy-section {
+  padding-top: 2em;
+}
+
+.copy-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* leadership  */
+.leadership-banner-caption {
+  position: absolute;
+  bottom: 4%;
+  z-index: 1;
+  height: 65%;
+  display: grid;
+  align-items: end;
+}
+
+.leadership-banner-caption h2 {
+  font-size: 4em;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.leadership-banner-caption ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.leadership-banner-caption ul li {
+  margin-right: 1em;
+}
+
+.leadership-banner-caption ul li a {
+  text-decoration: none !important;
+  color: #fff;
 }
