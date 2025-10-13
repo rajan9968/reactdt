@@ -889,7 +889,7 @@ export default function Home() {
                                     nextEl: '.swiper-button-next',
                                 }}
                                 loop={true}
-                                autoplay={{ delay: 3000 }}
+                                // autoplay={{ delay: 3000 }}
                                 breakpoints={{
                                     0: { slidesPerView: 1 },
                                     576: { slidesPerView: 2 },
