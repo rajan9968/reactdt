@@ -1,13 +1,59 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules';
+import * as bootstrap from 'bootstrap';
 
 
 
 
 export default function Home() {
+    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+    const mainOffcanvasRef = useRef(null);
+    const submenuRef = useRef(null);
+    const handleSubmenuOpen = (e) => {
+        e.preventDefault();
+        setIsSubmenuOpen(true);
+
+        // Show submenu using Bootstrap Offcanvas
+        const bsOffcanvas = new bootstrap.Offcanvas(submenuRef.current);
+        bsOffcanvas.show();
+
+        // Shift main offcanvas smoothly
+        if (mainOffcanvasRef.current) {
+            mainOffcanvasRef.current.style.marginRight = '21em';
+
+            // Hide main offcanvas close button
+            const mainCloseBtn = mainOffcanvasRef.current.querySelector('.btn-clos');
+            if (mainCloseBtn) mainCloseBtn.style.display = 'none';
+        }
+
+        // Reset main offcanvas when submenu closes
+        submenuRef.current.addEventListener('hidden.bs.offcanvas', () => {
+            if (mainOffcanvasRef.current) {
+                mainOffcanvasRef.current.style.marginRight = '';
+                const mainCloseBtn = mainOffcanvasRef.current.querySelector('.btn-clos');
+                if (mainCloseBtn) mainCloseBtn.style.display = 'block';
+            }
+            setIsSubmenuOpen(false);
+        });
+    };
+
+    const offcanvasRef = useRef(null);
+
+    const openOffcanvas = (e) => {
+        e.preventDefault();
+        offcanvasRef.current.classList.add("show");
+    };
+
+    const closeOffcanvas = () => {
+        const bsOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasRef.current);
+        if (bsOffcanvas) {
+            bsOffcanvas.hide(); // properly triggers hide events
+        }
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             const header = document.querySelector("header");
@@ -158,6 +204,7 @@ export default function Home() {
                             </div>
                             <div
                                 className="offcanvas offcanvas-end custom-off"
+                                ref={mainOffcanvasRef}
                                 tabIndex={-1}
                                 id="offcanvasRight"
                                 aria-labelledby="offcanvasRightLabel"
@@ -181,6 +228,8 @@ export default function Home() {
                                                         href="#"
                                                         className="submenu-toggle"
                                                         data-target="#offcanvasRight2"
+
+                                                        onClick={handleSubmenuOpen}
                                                     >
                                                         About Us
                                                     </a>
@@ -258,6 +307,7 @@ export default function Home() {
                             </div>
                             {/* Submenu Offcanvas */}
                             <div
+                                ref={submenuRef}
                                 className="offcanvas offcanvas-end custom-off submenu-off"
                                 tabIndex={-1}
                                 id="offcanvasRight2"
@@ -269,6 +319,7 @@ export default function Home() {
                                         className="btn-clos text-reset custom-close"
                                         data-bs-dismiss="offcanvas"
                                         aria-label="Close"
+                                        onClick={closeOffcanvas}
                                     >
                                         <img src="assets/images/cross.svg" alt="" />
                                     </button>
