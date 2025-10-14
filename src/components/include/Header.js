@@ -224,7 +224,19 @@ export default function Header() {
                                     <ul className="offcanvas-links w-75">
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between border-0">
-                                                <Link to="/about-us" className="text-black">Who We Are</Link>
+                                                <Link
+                                                    to="/about-us"
+                                                    className="text-black"
+                                                    onClick={() => {
+                                                        const offcanvasEl = document.querySelector('.offcanvas.show');
+                                                        if (offcanvasEl) {
+                                                            const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+                                                            offcanvas.hide();
+                                                        }
+                                                    }}
+                                                >
+                                                    Who We Are
+                                                </Link>
 
                                             </div>
                                         </li>
