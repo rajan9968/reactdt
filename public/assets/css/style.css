@@ -15,6 +15,10 @@ body {
   margin-left: 1rem !important;
 }
 
+.pl-0 {
+  padding-left: 0;
+}
+
 .plr {
   padding: 0 7.13em;
 }
@@ -1371,4 +1375,36 @@ header.shrink {
 
 .news-title {
   padding: 1em 0;
+}
+
+.close-btn-modal {
+  display: flex;
+  justify-content: end;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 2em;
+}
+
+.member-name {
+  font-size: 2.5em;
+}
+
+.member-postion {
+  font-size: 1.5em;
+}
+
+.close-btn-modal .btn-close {
+  border: 1px solid #CAA537;
+  border-radius: 24px;
+  padding: 8px;
+  font-size: 10px;
+  background: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn-modal .btn-close img {
+  max-width: 2em;
 }

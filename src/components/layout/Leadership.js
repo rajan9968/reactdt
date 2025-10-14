@@ -1,8 +1,35 @@
-import React from 'react'
+import React, { useState } from "react";
 import Header from "../include/Header";
 import Footer from '../include/Footer';
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function Leadership() {
+    const [selectedMember, setSelectedMember] = useState(null);
+
+    const teamMembers = [
+        {
+            id: 1,
+            name: "Mr. Kuldeep Singh",
+            position: "Chairman",
+            image: "assets/images/team-1.png",
+            description:
+                "Bringing dynamic vision and a relentless drive for excellence, Mr. Singh continues to set industry benchmarks, leading Datta Infra's growth, innovation, and stakeholder value creation.",
+        },
+        {
+            id: 2,
+            name: "Mr. Varchasvi Gagal",
+            position: "CEO & MD",
+            image: "assets/images/team-2.png",
+            description:
+                "Leading Datta Infra with innovation and strategic insight, Mr. Gagal drives growth and sets new standards for excellence in the infrastructure sector.",
+        },
+    ];
+
+    const handleOpenModal = (member) => {
+        setSelectedMember(member);
+        const modal = new window.bootstrap.Modal(document.getElementById("teamModal"));
+        modal.show();
+    };
     return (
         <div>
             <Header />
@@ -40,7 +67,7 @@ export default function Leadership() {
                         >
                             <li className="nav-item" role="presentation">
                                 <button
-                                    className="nav-link active"
+                                    className="nav-link active pl-0"
                                     id="pills-home-tab"
                                     data-bs-toggle="pill"
                                     data-bs-target="#pills-home"
@@ -81,7 +108,7 @@ export default function Leadership() {
                                 </button>
                             </li>
                         </ul>
-                        <div className="tab-content" id="pills-tabContent">
+                        <div className="tab-content mt-4" id="pills-tabContent">
                             <div
                                 className="tab-pane fade show active"
                                 id="pills-home"
@@ -89,37 +116,99 @@ export default function Leadership() {
                                 aria-labelledby="pills-home-tab"
                             >
                                 <div className="row">
-                                    <div className="col-lg-4 col-md-6 col-sm-12">
-                                        <div className="team-card shadow rounded-top rounded-bottom bg-light">
-                                            <img
-                                                src="assets/images/team-1.png"
-                                                alt="Mr. Kuldeep Singh"
-                                                className="img-fluid rounded-top  mb-3"
-                                            />
-                                            <div className='team-name'>
-                                                <h5 className="fw-bold mb-1">Mr. Kuldeep Singh</h5>
-                                                <p>Chairman</p>
+                                    {teamMembers.map((member) => (
+                                        <div className="col-lg-4 mb-4" key={member.id}>
+                                            <div
+                                                className="team-card shadow rounded bg-light cursor-pointer"
+                                                onClick={() => handleOpenModal(member)}
+                                                style={{ cursor: "pointer" }}
+                                            >
+                                                <img
+                                                    src={member.image}
+                                                    alt={member.name}
+                                                    className="img-fluid rounded-top mb-3"
+                                                />
+                                                <div className="team-name">
+                                                    <h5 className="mb-1">{member.name}</h5>
+                                                    <p className="text-mute">{member.position}</p>
+                                                </div>
                                             </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Modal */}
+                                <div
+                                    className="modal fade"
+                                    id="teamModal"
+                                    tabIndex="-1"
+                                    aria-labelledby="teamModalLabel"
+                                    aria-hidden="true"
+                                >
+                                    <div className="modal-dialog modal-xl modal-dialog-centered">
+                                        <div className="modal-content border-0 p-5 overflow-hidden">
+                                            {selectedMember && (
+                                                <div className="row g-0">
+                                                    <div className="col-md-5">
+                                                        <img
+                                                            src={selectedMember.image}
+                                                            alt={selectedMember.name}
+                                                            className="img-fluid h-100 object-fit-cover"
+                                                        />
+                                                    </div>
+                                                    <div className="col-md-7 p-4">
+                                                        <div className="close-btn-modal position-absolute top-0 end-0 m-3">
+                                                            <button
+                                                                type="button"
+                                                                className="btn-close"
+                                                                data-bs-dismiss="modal"
+                                                                aria-label="Close"
+                                                            >
+                                                                <img src="assets/images/cross-icon.svg" alt="" />
+                                                            </button>
+                                                        </div>
+                                                        <h3 className="member-name">{selectedMember.name}</h3>
+                                                        <h6 className="member-postion mb-3">{selectedMember.position}</h6>
+                                                        <div className="social-icons mt-3">
+                                                            <a href="#" className="btn btn-outline-secondary btn-sm rounded-circle me-2">
+                                                                <i className="bi bi-linkedin"></i>
+                                                            </a>
+                                                            <a href="#" className="btn btn-outline-secondary btn-sm rounded-circle me-2">
+                                                                <i className="bi bi-twitter-x"></i>
+                                                            </a>
+                                                            <a href="#" className="btn btn-outline-secondary btn-sm rounded-circle me-2">
+                                                                <i className="bi bi-instagram"></i>
+                                                            </a>
+                                                            <a href="#" className="btn btn-outline-secondary btn-sm rounded-circle">
+                                                                <i className="bi bi-facebook"></i>
+                                                            </a>
+                                                        </div>
+                                                        <p className="mt-3">{selectedMember.description}</p>
+
+
+                                                    </div>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div
-                                className="tab-pane fade"
-                                id="pills-profile"
-                                role="tabpanel"
-                                aria-labelledby="pills-profile-tab"
-                            >
-                                ...
-                            </div>
-                            <div
-                                className="tab-pane fade"
-                                id="pills-contact"
-                                role="tabpanel"
-                                aria-labelledby="pills-contact-tab"
-                            >
-                                ...
-                            </div>
+                        </div>
+                        <div
+                            className="tab-pane fade"
+                            id="pills-profile"
+                            role="tabpanel"
+                            aria-labelledby="pills-profile-tab"
+                        >
+                            ...
+                        </div>
+                        <div
+                            className="tab-pane fade"
+                            id="pills-contact"
+                            role="tabpanel"
+                            aria-labelledby="pills-contact-tab"
+                        >
+                            ...
                         </div>
                     </div>
                 </section>
