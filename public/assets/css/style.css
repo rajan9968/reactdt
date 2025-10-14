@@ -143,7 +143,7 @@ a {
 }
 
 .card-custom:hover {
-  background: #36c980;
+  background: #02A683;
 }
 
 .card-custom:hover h3,
@@ -727,7 +727,7 @@ a {
 }
 
 .news-content {
-  background: #36c980;
+  background: #02A683;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   position: absolute;
@@ -800,7 +800,7 @@ a {
 }
 
 .footer {
-  background: #02a986;
+  background: #02A683;
   padding: 2em 0 1em 0;
 }
 
@@ -846,7 +846,7 @@ a {
 }
 
 .custom-off {
-  background-color: #02a683;
+  background-color: #02A683;
 }
 
 div#offcanvasRight {
@@ -906,7 +906,7 @@ div#offcanvasRight {
 }
 
 .submenu-off {
-  background-color: #96f196 !important;
+  background-color: #E6FFF6 !important;
 }
 
 .offcanvas-menu .custom-fa {
@@ -1072,7 +1072,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 9999;
-  background: #02a986;
+  background: #02A683;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
