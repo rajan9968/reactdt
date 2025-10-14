@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as bootstrap from "bootstrap";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
@@ -223,7 +224,8 @@ export default function Header() {
                                     <ul className="offcanvas-links w-75">
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between border-0">
-                                                <a href="#" className="text-black">Who We Are</a>
+                                                <Link to="/about-us" className="text-black">Who We Are</Link>
+
                                             </div>
                                         </li>
                                         <li>

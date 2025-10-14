@@ -1408,3 +1408,41 @@ header.shrink {
 .close-btn-modal .btn-close img {
   max-width: 2em;
 }
+
+.project-section .btn-design {
+  left: unset;
+}
+
+.project-info-card {
+  position: absolute;
+  bottom: -37%;
+  right: 9%;
+  width: 25%;
+}
+
+.project-info-card h5 {
+  color: #0b2239;
+}
+
+.social-links a {
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #00a189;
+}
+
+.project-point {
+  border-bottom: 1px solid;
+  padding: 1em 0;
+}
+
+.project-info {
+  border-bottom: 1px solid;
+  font-size: 1.4em;
+}
+
+.project-first-details {
+  width: 61%;
+}
