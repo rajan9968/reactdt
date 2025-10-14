@@ -10,7 +10,13 @@ import Footer from "../include/Footer";
 
 
 export default function Home() {
-
+    const logos = [
+        { src: "assets/images/logo-1.png", alt: "NTPC" },
+        { src: "assets/images/logo-2.png", alt: "Engie" },
+        { src: "assets/images/logo-3.png", alt: "Tata Power" },
+        { src: "assets/images/logo-4.png", alt: "SJVN" },
+        { src: "assets/images/logo-5.png", alt: "Indian Oil" },
+    ];
     const slidesData = [
         {
             bg: "./assets/images/banner.png",
@@ -22,7 +28,7 @@ export default function Home() {
             ],
         },
         {
-            bg: "./assets/images/banner-2.png",
+            bg: "./assets/images/home-banner-2.jpg",
             title: "Empowering Tomorrow with Sustainable Solutions",
             stats: [
                 { number: "50 +", label: "Projects Completed\nin IndiaC" },
@@ -215,7 +221,7 @@ export default function Home() {
                     </div>
                 </section>
                 {/* Our Business start  */}
-                <section className="our-business my-5">
+                <section className="our-business py-5 bg-white">
                     <div className="container-fluid plr">
                         <div className="text-center mb-5">
                             <h2 className="section-title">Our Business</h2>
@@ -298,32 +304,34 @@ export default function Home() {
                                     <div className="divider" />
                                 </div>
                                 <div className="col-lg-9">
-                                    <div className="trusted-logos d-flex justify-content-between align-items-center flex-wrap">
-                                        <img
-                                            src="assets/images/logo-1.png"
-                                            className="img-fluid trust-logo"
-                                            alt="NTPC"
-                                        />
-                                        <img
-                                            src="assets/images/logo-2.png"
-                                            className="img-fluid trust-logo"
-                                            alt="Engie"
-                                        />
-                                        <img
-                                            src="assets/images/logo-3.png"
-                                            className="img-fluid trust-logo"
-                                            alt="Tata Power"
-                                        />
-                                        <img
-                                            src="assets/images/logo-4.png"
-                                            className="img-fluid trust-logo"
-                                            alt="SJVN"
-                                        />
-                                        <img
-                                            src="assets/images/logo-5.png"
-                                            className="img-fluid trust-logo"
-                                            alt="Indian Oil"
-                                        />
+                                    <div className="trusted-logos">
+                                        <Swiper
+                                            modules={[Autoplay]}
+                                            spaceBetween={30}
+                                            slidesPerView={3}
+                                            loop={true}
+                                            autoplay={{
+                                                delay: 2000,
+                                                disableOnInteraction: false,
+                                            }}
+                                            breakpoints={{
+                                                320: { slidesPerView: 2 },
+                                                576: { slidesPerView: 3 },
+                                                992: { slidesPerView: 4 },
+                                                1200: { slidesPerView: 5 },
+                                            }}
+                                            className="mySwiper"
+                                        >
+                                            {logos.map((logo, index) => (
+                                                <SwiperSlide key={index}>
+                                                    <img
+                                                        src={logo.src}
+                                                        alt={logo.alt}
+                                                        className="img-fluid trust-logo"
+                                                    />
+                                                </SwiperSlide>
+                                            ))}
+                                        </Swiper>
                                     </div>
                                 </div>
                             </div>
@@ -409,11 +417,11 @@ export default function Home() {
                 </section>
                 {/* Progress end  */}
                 {/* Our Portfolio start  */}
-                <section className="py-5">
+                <section className="our-portfolio-datta pt-5 pb-4 bg-white">
                     <div className="container-fluid plr">
-                        <div className="text-center mb-5">
+                        <div className="text-center">
                             <h2 className="section-title">Our Portfolio</h2>
-                            <p className="section-text">
+                            <p className="section-text m-0 pb-2">
                                 Each project represents a milestone in Datta Infra’s growth journey,
                                 underlining our expertise in delivering high-impact infrastructure
                                 that combines scale, reliability, and sustainable value for
@@ -583,7 +591,7 @@ export default function Home() {
                 </section>
                 {/* Join end  */}
                 {/* What's New start  */}
-                <section className="what-new py-5">
+                <section className="what-new py-5 bg-white">
                     <div className="container-fluid plr">
                         <div className="text-center mb-5">
                             <h2 className="section-title">What's New</h2>
@@ -621,7 +629,7 @@ export default function Home() {
                                                 <img src={item.img} className="img-fluid" alt="news" />
                                             </div>
                                             <div className="news-content">
-                                                <p>{item.date}</p>
+                                                <p className="news-title">{item.date}</p>
                                                 <p className="content-news-para">{item.text}</p>
                                                 <div className="btn-design-new">
                                                     <a href="#" className="custom-btn">Read More</a>

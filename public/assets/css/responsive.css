@@ -156,7 +156,20 @@
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1366px) {
+
+@media (min-width: 1024px) and (max-width: 1360px) {
+    .trusted-section .swiper-wrapper {
+        align-items: center;
+    }
+
+    .copy-section {
+        zoom: 79%;
+    }
+
+    .social-icons {
+        justify-content: unset !important;
+    }
+
     .nav .nav-links a {
         font-size: 1em;
     }
@@ -277,7 +290,7 @@
 
     #history-carousel .swiper-button-prev {
         /* top: 38%; */
-        left: 95.2% !important;
+        left: 95.5% !important;
         zoom: 73%;
     }
 
@@ -349,9 +362,38 @@
         width: 14%;
         font-size: 0.8em;
     }
+        .trust-logo {
+            max-width: 62%;
+        }
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1366px) {
+    .trusted-section .swiper-wrapper {
+        align-items: center;
+    }
+
+    .copy-section {
+        zoom: 79%;
+    }
+
+    #history-carousel .swiper-button-prev {
+        top: 35%;
+        left: 95.5% !important;
+        zoom: 79%;
+    }
+
+    #history-carousel .swiper-button-next {
+        right: -0.5% !important;
+        top: 85% !important;
+        zoom: 79%;
+    }
+
+    #history-carousel .swiper-button-prev,
+    #history-carousel .swiper-button-next {
+        width: 63px !important;
+        height: 81px !important;
+    }
+
     .nav .nav-links a {
         font-size: 1em;
     }
@@ -420,7 +462,7 @@
     }
 
     .trust-logo {
-        max-width: 13%;
+        max-width: 62%;
     }
 
     .content-text h3 {

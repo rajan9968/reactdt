@@ -850,7 +850,7 @@ a {
 }
 
 div#offcanvasRight {
-  width: 35%;
+  width: 30%;
 }
 
 .offcanvas-menu {
@@ -956,19 +956,20 @@ div#offcanvasRight {
 .trusted-title .circle {
   width: 100px;
   height: 100px;
-  background-color: #c3f7ce;
+  background-color: #E6FFF6;
   border-radius: 50%;
   position: absolute;
   left: -34px;
   top: 9%;
   transform: translateY(-50%);
-  z-index: -2;
+  z-index: 0;
 }
 
 .trusted-title h2 {
   font-weight: 700;
   color: #333;
   margin-left: 20px;
+  z-index: 1;
 }
 
 .divider {
@@ -1366,4 +1367,8 @@ header.shrink {
 
 .team-card:hover .team-name h5 p {
   color: #fff;
+}
+
+.news-title {
+  padding: 1em 0;
 }
