@@ -913,6 +913,17 @@ div#offcanvasRight {
   background-color: #E6FFF6 !important;
 }
 
+.submenu-off,
+.custom-off {
+  z-index: 9999;
+}
+
+.submenu-toggle {
+  color: #fff;
+  font-size: 2.2em;
+  font-weight: 400;
+}
+
 .offcanvas-menu .custom-fa {
   font-size: 25px;
   height: 64px;
@@ -1445,4 +1456,63 @@ header.shrink {
 
 .project-first-details {
   width: 61%;
+}
+
+.fax-icon {
+  font-size: 1.2em;
+  color: #02A683;
+}
+
+.blog-date {
+  color: #02A683;
+}
+
+.blog-title {
+  color: #02A683;
+}
+
+.team-card:hover .blog-date,
+.team-card:hover .blog-title {
+  color: #fff;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 250px;
+  background: #fff;
+  border: 1px solid #CAA537;
+  border-radius: 5px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar i {
+  position: absolute;
+  left: 12px;
+  color: #999;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-left: 30px;
+  font-size: 15px;
+  color: #333;
+  background: transparent;
+}
+
+.blog-details-title {
+  color: #02A683;
+}
+
+.form-select {
+  border-color: #CAA537;
+}
+
+.newsroom p {
+  font-weight: 500;
 }

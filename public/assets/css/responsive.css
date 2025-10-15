@@ -366,9 +366,6 @@
     .trust-logo {
         max-width: 62%;
     }
-<<<<<<< HEAD
-=======
-
 
     .vision-section .card-custom {
         height: 24em;
@@ -417,7 +414,7 @@
         position: unset;
         left: unset;
     }
->>>>>>> 2edfc2e97ae65cc3817942add542111a4d624df8
+
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1366px) {
@@ -509,6 +506,10 @@
     }
 
     .offcanvas-menu ul li a {
+        font-size: 1.8em;
+    }
+
+    .offcanvas-menu .submenu-toggle {
         font-size: 1.8em;
     }
 
@@ -651,13 +652,11 @@
         width: 45%;
     }
 
-<<<<<<< HEAD
     .about-banner-caption h2,
     .leadership-banner-caption h2 {
         font-size: 2.5em;
     }
 
-=======
     .about-banner-caption h2 {
         font-size: 2.5em;
     }
@@ -666,7 +665,7 @@
     .vision-section .card-custom {
         height: 24em;
     }
->>>>>>> 2edfc2e97ae65cc3817942add542111a4d624df8
+
 }
 
 @media only screen and (max-width: 480px) {
