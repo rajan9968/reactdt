@@ -362,9 +362,10 @@
         width: 14%;
         font-size: 0.8em;
     }
-        .trust-logo {
-            max-width: 62%;
-        }
+
+    .trust-logo {
+        max-width: 62%;
+    }
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1366px) {
@@ -556,6 +557,11 @@
         font-size: 0.9em;
         padding: 10px;
         width: 45%;
+    }
+
+    .about-banner-caption h2,
+    .leadership-banner-caption h2 {
+        font-size: 2.5em;
     }
 
 }
