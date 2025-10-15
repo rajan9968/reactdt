@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../include/Header";
 import Footer from '../include/Footer';
+import { Link } from "react-router-dom";
 
 export default function ProjectPortfolio() {
     return (
@@ -42,18 +43,20 @@ export default function ProjectPortfolio() {
                         </div>
                         <div className="row">
                             <div className="col-lg-4 mb-4">
-                                <div
-                                    className="team-card shadow rounded bg-light cursor-pointer">
-                                    <img
-                                        src="assets/images/project-1.png"
-                                        alt="project"
-                                        className="img-fluid rounded-top mb-3"
-                                    />
-                                    <div className="team-name">
-                                        <h5 className="mb-1">Bikaner, Rajasthan</h5>
-                                        <p className="text-mute"> Solar (Single Location)</p>
+                                <Link to="/project-details" className="text-black text-decoration-none">
+                                    <div
+                                        className="team-card shadow rounded bg-light cursor-pointer">
+                                        <img
+                                            src="assets/images/project-1.png"
+                                            alt="project"
+                                            className="img-fluid rounded-top mb-3"
+                                        />
+                                        <div className="team-name">
+                                            <h5 className="mb-1">Bikaner, Rajasthan</h5>
+                                            <p className="text-mute"> Solar (Single Location)</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </Link>
                             </div>
                             <div className="col-lg-12 my-5 text-center d-flex justify-content-center">
                                 <div className="btn-design">

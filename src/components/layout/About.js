@@ -34,9 +34,7 @@ export default function About() {
                 <section className="powering-progress vision-section py-5">
                     <div className="container-fluid plr">
                         <div className="text-center mb-5">
-                            <h2 className="section-title">
-                                Overview
-                            </h2>
+                            <h2 className="section-title">Overview</h2>
                         </div>
                         <div className="row">
                             <div className="col-lg-6">
@@ -44,39 +42,32 @@ export default function About() {
                                     <img
                                         src="assets/images/join-1.png"
                                         className="img-fluid w-100 rounded"
-                                        alt=""
-                                        srcSet=""
+                                        alt="Team working together"
                                     />
                                 </div>
                             </div>
-                            <div className="col-lg-6 d-flex flex-column">
-                                <div className="power-content mb-auto">
+                            <div className="col-lg-6 d-flex flex-column justify-content-between">
+                                <div className="power-content">
                                     <p>
-                                        Loremipsumdolorsitamet,consectetueradipiscingelit,seddiamnonummynibheuismodtinciduntut
-                                        laoreetdoloremagnaaliquameratvolutpat.Utwisienimadminimveniam,quisnostrudexercitation
-                                        ullamcorpersuscipitlobortisnislutaliquipexeacommodoconsequat.Duisautemveleumiriuredolorin
-                                        hendreritinvulputatevelitessemolestieconsequat,velillumdoloreeufeugiatnullafacilisisatveroeros
-                                        etaccumsanetiustoodiodignissimquiblanditpraesentluptatumzzrildelenitaugueduisdolorete
-                                        feugait nulla facilisi. </p>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                        volutpat.
+                                    </p>
                                     <p>
-                                        Loremipsumdolorsitamet,consectetueradipiscingelit,seddiamnonummynibheuismodtinciduntut
-                                        laoreetdoloremagnaaliquameratvolutpat.Utwisienimadminimveniam,quisnostrudexercitation
-                                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                                        Loremipsumdolorsitamet,consectetueradipiscingelit,seddiamnonummynibheuismodtinciduntut
-                                        laoreetdoloremagnaaliquameratvolutpat.Utwisienimadminimveniam,quisnostrudexercitation
-                                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                                        Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+                                        suscipit lobortis nisl ut aliquip ex ea commodo consequat.
                                     </p>
                                 </div>
                                 <div className="d-flex align-items-end justify-content-end">
-
                                     <div className="group-icon">
-                                        <img src="assets/images/Group-icon.png" alt="" srcSet="" />
+                                        <img src="assets/images/Group-icon.png" alt="Decorative group icon" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+
                 {/* Progress end  */}
                 <section className="our-business vision-section my-5">
                     <div className="container-fluid plr">
