@@ -362,12 +362,102 @@
         width: 14%;
         font-size: 0.8em;
     }
-        .trust-logo {
-            max-width: 62%;
-        }
+
+    .trust-logo {
+        max-width: 62%;
+    }
+
+
+    .vision-section .card-custom {
+        height: 24em;
+    }
+
+    .about-banner-caption h2,
+    .leadership-banner-caption h2 {
+        font-size: 2.5em;
+    }
+
+    .team-name {
+        padding: 1em;
+    }
+
+    .team-card {
+
+        height: 28em;
+    }
+
+    .leader-section .nav-pills .nav-link.active,
+    .leader-section .nav-pills .show>.nav-link {
+        font-size: 1.2em;
+    }
+
+    .leader-section .nav-pills .nav-link {
+        font-size: 1.2em;
+    }
+
+    .leader-section .modal-dialog {
+        max-width: 800px;
+    }
+
+    .leader-section .modal-content {
+        padding: 1rem !important;
+    }
+
+    .member-name {
+        font-size: 1.5em;
+    }
+
+    .member-postion {
+        font-size: 1.2em;
+    }
+
+    .project-section .btn-design {
+        position: unset;
+        left: unset;
+    }
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1366px) {
+
+    .about-banner-caption h2,
+    .leadership-banner-caption h2 {
+        font-size: 2.5em;
+    }
+
+    .team-name {
+        padding: 1em;
+    }
+
+    .team-card {
+
+        height: 28em;
+    }
+
+    .leader-section .nav-pills .nav-link.active,
+    .leader-section .nav-pills .show>.nav-link {
+        font-size: 1.2em;
+    }
+
+    .leader-section .nav-pills .nav-link {
+        font-size: 1.2em;
+    }
+
+    .leader-section .modal-dialog {
+        max-width: 800px;
+    }
+
+    .leader-section .modal-content {
+        padding: 1rem !important;
+    }
+
+    .member-name {
+        font-size: 1.5em;
+    }
+
+    .member-postion {
+        font-size: 1.2em;
+    }
+
     .trusted-section .swiper-wrapper {
         align-items: center;
     }
@@ -558,6 +648,14 @@
         width: 45%;
     }
 
+    .about-banner-caption h2 {
+        font-size: 2.5em;
+    }
+
+
+    .vision-section .card-custom {
+        height: 24em;
+    }
 }
 
 @media only screen and (max-width: 480px) {
