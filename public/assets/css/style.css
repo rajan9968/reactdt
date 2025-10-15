@@ -849,7 +849,13 @@ a {
   align-items: anchor-center;
 }
 
+.custom-off,
+.submenu-off {
+  z-index: 9999;
+}
+
 .custom-off {
+  width: 25% !important;
   background-color: #02A683;
 }
 
@@ -911,6 +917,7 @@ div#offcanvasRight {
 
 .submenu-off {
   background-color: #E6FFF6 !important;
+  width: 19% !important;
 }
 
 .offcanvas-menu .custom-fa {
@@ -1445,4 +1452,10 @@ header.shrink {
 
 .project-first-details {
   width: 61%;
+}
+
+.submenu-toggle {
+  color: #fff;
+  font-size: 2.2em;
+  font-weight: 400;
 }

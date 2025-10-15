@@ -415,9 +415,20 @@
         position: unset;
         left: unset;
     }
+
+    .project-info-card {
+        bottom: -28%;
+        right: 9%;
+        zoom: 76%;
+    }
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1366px) {
+    .project-info-card {
+        bottom: -28%;
+        right: 9%;
+        zoom: 76%;
+    }
 
     .about-banner-caption h2,
     .leadership-banner-caption h2 {
@@ -508,6 +519,9 @@
     .offcanvas-menu ul li a {
         font-size: 1.8em;
     }
+        .submenu-toggle {
+            font-size: 1.8em;
+        }
 
     .offcanvas-header {
         margin: 0em 2em 0 0;

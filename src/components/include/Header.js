@@ -1,44 +1,29 @@
 import React, { useState, useEffect, useRef } from "react";
-import * as bootstrap from "bootstrap";
+import { Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-    const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-    const mainOffcanvasRef = useRef(null);
-    const submenuRef = useRef(null);
+    const [showMainOffcanvas, setShowMainOffcanvas] = useState(false);
+    const [showSubmenu, setShowSubmenu] = useState(false);
     const headerRef = useRef(null);
 
+    // Handle main offcanvas
+    const handleMainOffcanvasClose = () => setShowMainOffcanvas(false);
+    const handleMainOffcanvasShow = () => setShowMainOffcanvas(true);
+
+    // Handle submenu offcanvas
     const handleSubmenuOpen = (e) => {
         e.preventDefault();
-        setIsSubmenuOpen(true);
-
-        // Show submenu using Bootstrap Offcanvas
-        const bsOffcanvas = new bootstrap.Offcanvas(submenuRef.current);
-        bsOffcanvas.show();
-
-        // Shift main offcanvas smoothly
-        if (mainOffcanvasRef.current) {
-            mainOffcanvasRef.current.style.marginRight = "21em";
-
-            // Hide main offcanvas close button
-            const mainCloseBtn = mainOffcanvasRef.current.querySelector(".btn-clos");
-            if (mainCloseBtn) mainCloseBtn.style.display = "none";
-        }
-
-        // Reset main offcanvas when submenu closes
-        submenuRef.current.addEventListener("hidden.bs.offcanvas", () => {
-            if (mainOffcanvasRef.current) {
-                mainOffcanvasRef.current.style.marginRight = "";
-                const mainCloseBtn = mainOffcanvasRef.current.querySelector(".btn-clos");
-                if (mainCloseBtn) mainCloseBtn.style.display = "block";
-            }
-            setIsSubmenuOpen(false);
-        });
+        setShowSubmenu(true);
     };
 
-    const closeOffcanvas = () => {
-        const bsOffcanvas = bootstrap.Offcanvas.getInstance(submenuRef.current);
-        if (bsOffcanvas) bsOffcanvas.hide();
+    const handleSubmenuClose = () => {
+        setShowSubmenu(false);
+    };
+
+    const closeAllOffcanvas = () => {
+        setShowSubmenu(false);
+        setShowMainOffcanvas(false);
     };
 
     // Scroll shrink logic
@@ -63,163 +48,190 @@ export default function Header() {
                     <div className="nav mt-4">
                         {/* Logo */}
                         <div className="col-lg-4">
-                            <a href="#" className="logo">
+                            <Link to="/" className="logo">
                                 <img src="assets/images/datta-logo.png" alt="logo" />
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Navigation */}
                         <div className="col-lg-8">
-                            <img src="assets/images/menu-icon.jpg" className="navOpenBtn" alt="" />
+                            <img
+                                src="assets/images/menu-icon.jpg"
+                                className="navOpenBtn"
+                                alt="Open menu"
+                                role="button"
+                                tabIndex={0}
+                            />
                             <div className="d-flex justify-content-end align-items-center h-100">
                                 <ul className="nav-links">
                                     <i className="uil uil-times navCloseBtn" />
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Culture</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><Link to="/about">About Us</Link></li>
+                                    <li><Link to="/business">Business</Link></li>
+                                    <li><Link to="/culture">Culture</Link></li>
+                                    <li><Link to="/careers">Careers</Link></li>
+                                    <li><Link to="/contact">Contact</Link></li>
                                     <li>
-                                        <a href="#">
+                                        <a href="#" aria-label="Search">
                                             <i className="bi bi-search search-icon" id="searchIcon" />
                                         </a>
                                     </li>
                                     <li className="ml-3">
-                                        <a
-                                            href="#"
+                                        <button
                                             type="button"
-                                            data-bs-toggle="offcanvas"
-                                            data-bs-target="#offcanvasRight"
-                                            aria-controls="offcanvasRight"
+                                            onClick={handleMainOffcanvasShow}
+                                            aria-label="Open navigation menu"
+                                            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
                                         >
                                             <img src="assets/images/menu-icon.jpg" alt="" />
-                                        </a>
+                                        </button>
                                     </li>
                                 </ul>
 
                                 <div className="search-box">
                                     <i className="bi bi-search search-icon" />
-                                    <input type="text" placeholder="Search here..." />
+                                    <input type="text" placeholder="Search here..." aria-label="Search" />
                                 </div>
                             </div>
                         </div>
 
                         {/* Main Offcanvas */}
-                        <div
-                            className="offcanvas offcanvas-end custom-off"
-                            ref={mainOffcanvasRef}
-                            tabIndex={-1}
-                            id="offcanvasRight"
-                            aria-labelledby="offcanvasRightLabel"
+                        <Offcanvas
+                            show={showMainOffcanvas}
+                            onHide={handleMainOffcanvasClose}
+                            placement="end"
+                            className="custom-off"
+                            style={{
+                                marginRight: showSubmenu ? "21em" : "0",
+                                transition: "margin-right 0.3s ease"
+                            }}
                         >
-                            <div className="offcanvas-header justify-content-end">
+                            <Offcanvas.Header className="justify-content-end">
                                 <button
                                     type="button"
                                     className="btn-clos text-reset custom-close"
-                                    data-bs-dismiss="offcanvas"
+                                    onClick={handleMainOffcanvasClose}
                                     aria-label="Close"
+                                    style={{ display: showSubmenu ? 'none' : 'block' }}
                                 >
                                     <img src="assets/images/cross.svg" alt="" />
                                 </button>
-                            </div>
+                            </Offcanvas.Header>
 
-                            <div className="offcanvas-body">
+                            <Offcanvas.Body>
                                 <div className="offcanvas-menu">
                                     <ul className="offcanvas-links">
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <a
-                                                    href="#"
-                                                    className="submenu-toggle"
+                                                <button
                                                     onClick={handleSubmenuOpen}
+                                                    className="submenu-toggle"
+                                                    style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
                                                 >
                                                     About Us
-                                                </a>
+                                                </button>
                                                 <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <a href="#">Business</a>
+                                                <Link to="/business" onClick={closeAllOffcanvas}>Business</Link>
                                                 <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <a href="#">Culture</a>
+                                                <Link to="/culture" onClick={closeAllOffcanvas}>Culture</Link>
                                                 <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <a href="#">Awards</a>
+                                                <Link to="/awards" onClick={closeAllOffcanvas}>Awards</Link>
                                                 <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <a href="#">Investors</a>
+                                                <Link to="/investors" onClick={closeAllOffcanvas}>Investors</Link>
                                                 <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <a href="#">Newsroom</a>
+                                                <Link to="/newsroom" onClick={closeAllOffcanvas}>Newsroom</Link>
                                                 <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <a href="#">Resources</a>
+                                                <Link to="/resources" onClick={closeAllOffcanvas}>Resources</Link>
                                                 <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <a href="#">Careers</a>
+                                                <Link to="/careers" onClick={closeAllOffcanvas}>Careers</Link>
                                                 <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <a href="#">Contact</a>
+                                                <Link to="/contact" onClick={closeAllOffcanvas}>Contact</Link>
                                                 <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                     </ul>
 
                                     <ul className="social-icons d-flex align-items-center justify-content-between">
-                                        <li><i className="fa fa-facebook-f custom-fa" /></li>
-                                        <li><i className="bi bi-twitter-x custom-fa" /></li>
-                                        <li><i className="fa fa-linkedin custom-fa" /></li>
-                                        <li><i className="fa fa-instagram custom-fa" /></li>
-                                        <li><i className="fa fa-youtube-play custom-fa" /></li>
+                                        <li>
+                                            <a href="#" aria-label="Facebook">
+                                                <i className="fa fa-facebook-f custom-fa" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" aria-label="Twitter">
+                                                <i className="bi bi-twitter-x custom-fa" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" aria-label="LinkedIn">
+                                                <i className="fa fa-linkedin custom-fa" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" aria-label="Instagram">
+                                                <i className="fa fa-instagram custom-fa" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" aria-label="YouTube">
+                                                <i className="fa fa-youtube-play custom-fa" />
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
+                            </Offcanvas.Body>
+                        </Offcanvas>
 
                         {/* Submenu Offcanvas */}
-                        <div
-                            ref={submenuRef}
-                            className="offcanvas offcanvas-end custom-off submenu-off"
-                            tabIndex={-1}
-                            id="offcanvasRight2"
-                            aria-labelledby="offcanvasRightLabel2"
+                        <Offcanvas
+                            show={showSubmenu}
+                            onHide={handleSubmenuClose}
+                            placement="end"
+                            className="custom-off submenu-off"
                         >
-                            <div className="offcanvas-header justify-content-end m-0">
+                            <Offcanvas.Header className="justify-content-end m-0">
                                 <button
                                     type="button"
                                     className="btn-clos text-reset custom-close"
-                                    data-bs-dismiss="offcanvas"
+                                    onClick={handleSubmenuClose}
                                     aria-label="Close"
-                                    onClick={closeOffcanvas}
                                 >
                                     <img src="assets/images/cross.svg" alt="" />
                                 </button>
-                            </div>
+                            </Offcanvas.Header>
 
-                            <div className="offcanvas-body">
+                            <Offcanvas.Body>
                                 <div className="offcanvas-menu">
                                     <ul className="offcanvas-links w-75">
                                         <li>
@@ -227,34 +239,38 @@ export default function Header() {
                                                 <Link
                                                     to="/about-us"
                                                     className="text-black"
-                                                    onClick={() => {
-                                                        const offcanvasEl = document.querySelector('.offcanvas.show');
-                                                        if (offcanvasEl) {
-                                                            const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
-                                                            offcanvas.hide();
-                                                        }
-                                                    }}
+                                                    onClick={closeAllOffcanvas}
                                                 >
                                                     Who We Are
                                                 </Link>
-
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between border-0">
-                                                <a href="#" className="text-black">Leadership</a>
+                                                <Link
+                                                    to="/leadership-team"
+                                                    className="text-black"
+                                                    onClick={closeAllOffcanvas}
+                                                >
+                                                    Leadership
+                                                </Link>
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between border-0">
-                                                <a href="#" className="text-black">Project Portfolio</a>
+                                                <Link
+                                                    to="/project-portfolio"
+                                                    className="text-black"
+                                                    onClick={closeAllOffcanvas}
+                                                >
+                                                    Project Portfolio
+                                                </Link>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                        </div>
-
+                            </Offcanvas.Body>
+                        </Offcanvas>
                     </div>
                 </div>
             </div>
