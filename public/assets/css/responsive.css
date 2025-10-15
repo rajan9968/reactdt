@@ -413,6 +413,7 @@
 
     .project-section .btn-design {
         position: unset;
+        left: unset;
     }
 }
 
