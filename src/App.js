@@ -12,6 +12,8 @@ import Newsroom from './components/layout/Newsroom';
 import PressRelease from './components/layout/PressRelease';
 import PressReleaseDetails from './components/layout/PressReleaseDetails';
 import MediaResources from './components/layout/MediaResources';
+import MediaCoverages from './components/layout/MediaCoverages';
+import Contact from './components/layout/Contact';
 
 function App() {
   return (
@@ -29,7 +31,9 @@ function App() {
         <Route path="/newsroom" element={<Newsroom />} />
         <Route path="/press-release" element={<PressRelease />} />
         <Route path="/press-release-details" element={<PressReleaseDetails />} />
+        <Route path="/media-coverages" element={<MediaCoverages />} />
         <Route path="/media-resources" element={<MediaResources />} />
+        <Route path="/contact-us" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

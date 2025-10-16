@@ -36,13 +36,14 @@ export default function Blog() {
                 <section className='project-section py-5'>
                     <div className="container-fluid plr">
                         <div className="row">
-                            <div className="col-lg-8">
-                                <div className="text-start mb-5">
+                            <div className="col-lg-3"></div>
+                            <div className="col-lg-6">
+                                <div className="text-center mb-5">
                                     <h2 className="section-title">Read Our Latest Blogs</h2>
                                 </div>
                             </div>
-                            <div className="col-lg-4">
-                                <div className="d-flex gap-3">
+                            <div className="col-lg-3">
+                                <div className="d-flex gap-1">
                                     <div className="search-bar">
                                         <i className="fa fa-search"></i>
                                         <input
@@ -50,7 +51,7 @@ export default function Blog() {
                                             placeholder="Search..."
                                         />
                                     </div>
-                                    <Form.Select aria-label="Default select example" style={{ width: "30%" }}>
+                                    <Form.Select aria-label="Default select example" style={{ width: "40%" }}>
                                         <option>Year</option>
                                         <option value="1">2025</option>
                                         <option value="2">2024</option>

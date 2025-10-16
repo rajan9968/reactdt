@@ -49,7 +49,7 @@ export default function Newsroom() {
                                 <img
                                     src="assets/images/newsroom-1.png"
                                     alt="awards"
-                                    className="img-fluid desktop-banner rounded"
+                                    className="img-fluid desktop-banner rounded w-100"
                                 />
                             </div>
                             <div className='col-lg-8 newsroom'>
@@ -63,7 +63,7 @@ export default function Newsroom() {
                                 <img
                                     src="assets/images/newsroom-1.png"
                                     alt="awards"
-                                    className="img-fluid desktop-banner rounded"
+                                    className="img-fluid desktop-banner rounded w-100"
                                 />
                             </div>
                             <div className='col-lg-8 newsroom'>
@@ -77,7 +77,7 @@ export default function Newsroom() {
                                 <img
                                     src="assets/images/newsroom-1.png"
                                     alt="awards"
-                                    className="img-fluid desktop-banner rounded"
+                                    className="img-fluid desktop-banner rounded w-100"
                                 />
                             </div>
                             <div className='col-lg-8 newsroom'>
@@ -88,10 +88,25 @@ export default function Newsroom() {
                         </div>
                         <div className="my-3 text-center d-flex justify-content-center">
                             <div className="btn-design">
-                                <a href="" className="custom-btn">
-                                    Load More
-                                </a>
-                            </div></div>
+                                <Link to="/press-release" className="custom-btn">
+                                    View More
+                                    <svg
+                                        viewBox="-19.04 0 75.804 75.804"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="#ffffff"
+                                        stroke="#ffffff"
+                                    >
+                                        <g id="Group_65" transform="translate(-831.568 -384.448)">
+                                            <path
+                                                id="Path_57"
+                                                d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z"
+                                                fill="#ffffff"
+                                            ></path>
+                                        </g>
+                                    </svg>
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section className='project-section py-5'>
@@ -102,16 +117,13 @@ export default function Newsroom() {
                                     <h2 className="section-title">Media Coverages</h2>
                                 </div>
                             </div>
-
                         </div>
-
-
                         <div className="row align-items-center">
                             <div className="col-lg-4 mb-4">
                                 <img
                                     src="assets/images/newsroom-1.png"
                                     alt="awards"
-                                    className="img-fluid desktop-banner rounded"
+                                    className="img-fluid desktop-banner rounded w-100"
                                 />
                             </div>
                             <div className='col-lg-8 newsroom'>
@@ -125,7 +137,7 @@ export default function Newsroom() {
                                 <img
                                     src="assets/images/newsroom-1.png"
                                     alt="awards"
-                                    className="img-fluid desktop-banner rounded"
+                                    className="img-fluid desktop-banner rounded w-100"
                                 />
                             </div>
                             <div className='col-lg-8 newsroom'>
@@ -139,7 +151,7 @@ export default function Newsroom() {
                                 <img
                                     src="assets/images/newsroom-1.png"
                                     alt="awards"
-                                    className="img-fluid desktop-banner rounded"
+                                    className="img-fluid desktop-banner rounded w-100"
                                 />
                             </div>
                             <div className='col-lg-8 newsroom'>
@@ -150,10 +162,25 @@ export default function Newsroom() {
                         </div>
                         <div className="my-3 text-center d-flex justify-content-center">
                             <div className="btn-design">
-                                <a href="" className="custom-btn">
-                                    Load More
-                                </a>
-                            </div></div>
+                                <Link to="/media-coverages" className="custom-btn">
+                                    View More
+                                    <svg
+                                        viewBox="-19.04 0 75.804 75.804"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="#ffffff"
+                                        stroke="#ffffff"
+                                    >
+                                        <g id="Group_65" transform="translate(-831.568 -384.448)">
+                                            <path
+                                                id="Path_57"
+                                                d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z"
+                                                fill="#ffffff"
+                                            ></path>
+                                        </g>
+                                    </svg>
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 <section className='project-section py-5'>
@@ -170,26 +197,39 @@ export default function Newsroom() {
 
                         <div className="row align-items-center">
                             <div className="col-lg-6 mb-4">
-                                <img
-                                    src="assets/images/media-1.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded"
-                                />
+                                <div className='position-relative'>
+                                    <img
+                                        src="assets/images/media-1.png"
+                                        alt="awards"
+                                        className="img-fluid desktop-banner rounded w-100"
+                                    />
+                                    <p className='media-text'>Photos</p>
+                                </div>
                             </div>
                             <div className="col-lg-6 mb-4">
-                                <img
-                                    src="assets/images/media-2.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded"
-                                />
+                                <div className="position-relative">
+                                    <img
+                                        src="assets/images/media-2.png"
+                                        alt="awards"
+                                        className="img-fluid desktop-banner rounded w-100"
+                                    />
+
+                                    <p
+                                        className="media-text position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center"
+                                        style={{ margin: 0 }}
+                                    >
+                                        <img
+                                            src="assets/images/play-icon.png"
+                                            alt="play"
+                                            className='play-icon'
+                                        />
+                                    </p>
+                                    <p className='media-text'>Videos</p>
+                                </div>
                             </div>
+
                         </div>
-                        <div className="mt-3 pb-5 text-center d-flex justify-content-center">
-                            <div className="btn-design">
-                                <a href="" className="custom-btn">
-                                    Load More
-                                </a>
-                            </div></div>
+
                     </div>
                 </section>
 

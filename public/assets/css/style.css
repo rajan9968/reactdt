@@ -7,6 +7,7 @@
   font-family: "Poppins", sans-serif;
 }
 
+
 body {
   background: #f0faff;
 }
@@ -1515,4 +1516,67 @@ header.shrink {
 
 .newsroom p {
   font-weight: 500;
+}
+
+.custom-offcanvas.offcanvas-end {
+  width: 75% !important;
+  z-index: 9999;
+  right: 0;
+}
+
+.custom-offcanvas.offcanvas.offcanvas-end.show .btn-close {
+  border-radius: 50px;
+  border: 1px solid #CAA537;
+  font-size: 13px;
+}
+
+.media-resources {
+  width: 12%;
+}
+
+.custom-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-btn svg {
+  max-width: 17%;
+  background: #cda837;
+  height: 22px;
+  padding: 5px;
+  border-radius: 100%;
+}
+
+.media-text {
+  text-align: center;
+  position: absolute;
+  bottom: 3%;
+  left: 45%;
+  color: #fff;
+}
+
+.play-icon {
+  width: 60px;
+  height: "60px";
+  cursor: "pointer";
+}
+
+.glightbox-clean .gslide-description {
+  background: transparent !important;
+}
+
+.glightbox-clean .gslide-title {
+  color: #fff !important;
+  font-family: "Poppins", sans-serif !important;
+}
+
+.glightbox-clean .gslide-description {
+  margin-top: -6em !important;
+  text-align: center;
+}
+
+.contact-btn .btn-design {
+  left: unset;
 }

@@ -39,13 +39,39 @@ export default function PressReleaseDetails() {
                                 <img
                                     src="assets/images/newsroom-1.png"
                                     alt="awards"
-                                    className="img-fluid desktop-banner rounded"
+                                    className="img-fluid desktop-banner rounded w-100"
                                 />
                             </div>
                             <div className='col-lg-8 newsroom'>
                                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
                                 <p>Date: xx/xxx/xxxx</p>
                                 <p>Publication:</p>
+                                <div className="social-icons text-end mt-3">
+                                    <a
+                                        href="#"
+                                        className="btn btn-outline-secondary btn-sm rounded-circle me-2"
+                                    >
+                                        <i className="bi bi-linkedin"></i>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className="btn btn-outline-secondary btn-sm rounded-circle me-2"
+                                    >
+                                        <i className="bi bi-twitter-x"></i>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className="btn btn-outline-secondary btn-sm rounded-circle me-2"
+                                    >
+                                        <i className="bi bi-instagram"></i>
+                                    </a>
+                                    <a
+                                        href="#"
+                                        className="btn btn-outline-secondary btn-sm rounded-circle"
+                                    >
+                                        <i className="bi bi-facebook"></i>
+                                    </a>
+                                </div>
                             </div>
                             <div className='col-lg-12'>
                                 <div className='press-desc'>

@@ -3,7 +3,8 @@ import Header from "../include/Header";
 import Footer from '../include/Footer';
 import Form from 'react-bootstrap/Form';
 import { Link } from "react-router-dom";
-export default function PressRelease() {
+
+export default function MediaCoverages() {
     return (
         <div>
             <Header />
@@ -38,7 +39,7 @@ export default function PressRelease() {
                             <div className="col-lg-3"></div>
                             <div className="col-lg-6">
                                 <div className="text-center mb-5">
-                                    <h2 className="section-title">Press Releases</h2>
+                                    <h2 className="section-title">Media Coverages</h2>
                                 </div>
                             </div>
                             <div className="col-lg-3">

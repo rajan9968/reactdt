@@ -603,6 +603,14 @@
         padding: 10px;
     }
 
+    .media-resources {
+        width: 15%;
+    }
+
+    .media-resources svg {
+        max-width: 14% !important;
+    }
+
     .news-box {
         max-width: 100%;
     }

@@ -1,35 +1,41 @@
 import React, { useState } from "react";
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import Header from "../include/Header";
 import Footer from '../include/Footer';
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function Leadership() {
-    const [selectedMember, setSelectedMember] = useState(null);
-
     const teamMembers = [
         {
             id: 1,
-            name: "Mr. Kuldeep Singh",
-            position: "Chairman",
+            name: "Mr. Varchasvi Gagal",
+            position: "CEO & MD",
             image: "assets/images/team-1.png",
             description:
                 "Bringing dynamic vision and a relentless drive for excellence, Mr. Singh continues to set industry benchmarks, leading Datta Infra's growth, innovation, and stakeholder value creation.",
         },
         {
             id: 2,
-            name: "Mr. Varchasvi Gagal",
-            position: "CEO & MD",
+            name: "Mr. Kuldeep Singh",
+            position: "Chairman",
             image: "assets/images/team-2.png",
             description:
                 "Leading Datta Infra with innovation and strategic insight, Mr. Gagal drives growth and sets new standards for excellence in the infrastructure sector.",
-        },
+        }
     ];
 
-    const handleOpenModal = (member) => {
+    const [show, setShow] = useState(false);
+    const [selectedMember, setSelectedMember] = useState(null);
+
+    const handleClose = () => setShow(false);
+
+    const handleShow = (member) => {
         setSelectedMember(member);
-        const modal = new window.bootstrap.Modal(document.getElementById("teamModal"));
-        modal.show();
+        setShow(true);
     };
+
+
     return (
         <div>
             <Header />
@@ -58,6 +64,8 @@ export default function Leadership() {
                     </div>
 
                 </section>
+
+
                 <section className='leader-section py-5'>
                     <div className="container-fluid plr">
                         <ul
@@ -117,12 +125,13 @@ export default function Leadership() {
                             >
                                 <div className="row">
                                     {teamMembers.map((member) => (
-                                        <div className="col-lg-4 mb-4" key={member.id}>
-                                            <div
-                                                className="team-card shadow rounded bg-light cursor-pointer"
-                                                onClick={() => handleOpenModal(member)}
-                                                style={{ cursor: "pointer" }}
-                                            >
+                                        <div
+                                            className="col-lg-4 mb-4"
+                                            key={member.id}
+                                            onClick={() => handleShow(member)}
+                                            style={{ cursor: "pointer" }}
+                                        >
+                                            <div className="team-card shadow rounded bg-light">
                                                 <img
                                                     src={member.image}
                                                     alt={member.name}
@@ -130,24 +139,26 @@ export default function Leadership() {
                                                 />
                                                 <div className="team-name">
                                                     <h5 className="mb-1">{member.name}</h5>
-                                                    <p className="text-mute">{member.position}</p>
+                                                    <p className="">{member.position}</p>
                                                 </div>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
 
-                                {/* Modal */}
-                                <div
-                                    className="modal fade"
-                                    id="teamModal"
-                                    tabIndex="-1"
-                                    aria-labelledby="teamModalLabel"
-                                    aria-hidden="true"
+                                {/* Dynamic Offcanvas */}
+                                <Offcanvas
+                                    show={show}
+                                    onHide={handleClose}
+                                    placement="end"
+                                    className="custom-offcanvas"
                                 >
-                                    <div className="modal-dialog modal-xl modal-dialog-centered">
-                                        <div className="modal-content border-0 p-5 overflow-hidden">
-                                            {selectedMember && (
+                                    {selectedMember && (
+                                        <>
+                                            <Offcanvas.Header closeButton>
+                                                <Offcanvas.Title></Offcanvas.Title>
+                                            </Offcanvas.Header>
+                                            <Offcanvas.Body className="p-4">
                                                 <div className="row g-0">
                                                     <div className="col-md-5">
                                                         <img
@@ -157,41 +168,43 @@ export default function Leadership() {
                                                         />
                                                     </div>
                                                     <div className="col-md-7 p-4">
-                                                        <div className="close-btn-modal position-absolute top-0 end-0 m-3">
-                                                            <button
-                                                                type="button"
-                                                                className="btn-close"
-                                                                data-bs-dismiss="modal"
-                                                                aria-label="Close"
-                                                            >
-                                                                <img src="assets/images/cross-icon.svg" alt="" />
-                                                            </button>
-                                                        </div>
                                                         <h3 className="member-name">{selectedMember.name}</h3>
-                                                        <h6 className="member-postion mb-3">{selectedMember.position}</h6>
+                                                        <h6 className="member-position mb-3">
+                                                            {selectedMember.position}
+                                                        </h6>
                                                         <div className="social-icons mt-3">
-                                                            <a href="#" className="btn btn-outline-secondary btn-sm rounded-circle me-2">
+                                                            <a
+                                                                href="#"
+                                                                className="btn btn-outline-secondary btn-sm rounded-circle me-2"
+                                                            >
                                                                 <i className="bi bi-linkedin"></i>
                                                             </a>
-                                                            <a href="#" className="btn btn-outline-secondary btn-sm rounded-circle me-2">
+                                                            <a
+                                                                href="#"
+                                                                className="btn btn-outline-secondary btn-sm rounded-circle me-2"
+                                                            >
                                                                 <i className="bi bi-twitter-x"></i>
                                                             </a>
-                                                            <a href="#" className="btn btn-outline-secondary btn-sm rounded-circle me-2">
+                                                            <a
+                                                                href="#"
+                                                                className="btn btn-outline-secondary btn-sm rounded-circle me-2"
+                                                            >
                                                                 <i className="bi bi-instagram"></i>
                                                             </a>
-                                                            <a href="#" className="btn btn-outline-secondary btn-sm rounded-circle">
+                                                            <a
+                                                                href="#"
+                                                                className="btn btn-outline-secondary btn-sm rounded-circle"
+                                                            >
                                                                 <i className="bi bi-facebook"></i>
                                                             </a>
                                                         </div>
-                                                        <p className="mt-3">{selectedMember.description}</p>
-
-
                                                     </div>
                                                 </div>
-                                            )}
-                                        </div>
-                                    </div>
-                                </div>
+                                                <p className="mt-3">{selectedMember.description}</p>
+                                            </Offcanvas.Body>
+                                        </>
+                                    )}
+                                </Offcanvas>
                             </div>
                         </div>
                         <div

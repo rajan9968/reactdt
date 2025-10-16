@@ -99,6 +99,40 @@ export default function MediaResources() {
                                     <div className="col-lg-4">
                                         <div className="team-card shadow rounded bg-light h-100 cursor-pointer">
                                             <a
+                                                href="assets/images/media-team-1.png"
+                                                className="glightbox"
+                                                data-gallery="projects"
+                                                data-title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
+                                            >
+                                                <img
+                                                    src="assets/images/media-team-1.png"
+                                                    alt="project"
+                                                    className="img-fluid rounded-top mb-3"
+                                                />
+
+                                            </a>
+                                            <div className="team-name">
+                                                <p className="text-mute blog-title">
+                                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                                    nonummy nibh euismod
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div
+                                className="tab-pane fade"
+                                id="pills-profile"
+                                role="tabpanel"
+                                aria-labelledby="pills-profile-tab"
+                            >
+                                <div className="row">
+                                    <div className="col-lg-4">
+                                        <div className="team-card shadow rounded bg-light h-100 cursor-pointer">
+                                            <a
                                                 href="assets/images/project-1.png"
                                                 className="glightbox"
                                                 data-gallery="projects"
@@ -109,6 +143,7 @@ export default function MediaResources() {
                                                     alt="project"
                                                     className="img-fluid rounded-top mb-3"
                                                 />
+
                                             </a>
                                             <div className="team-name">
                                                 <p className="text-mute blog-title">
@@ -123,14 +158,38 @@ export default function MediaResources() {
 
                             </div>
                         </div>
-                        <div
+                        {/* <div
                             className="tab-pane fade"
                             id="pills-profile"
                             role="tabpanel"
                             aria-labelledby="pills-profile-tab"
                         >
-                            ...
-                        </div>
+                            <div className="row">
+                                <div className="col-lg-4">
+                                    <div className="team-card shadow rounded bg-light h-100 cursor-pointer">
+                                        <a
+                                            href="assets/images/project-1.png"
+                                            className="glightbox"
+                                            data-gallery="projects"
+                                            data-title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod"
+                                        >
+                                            <img
+                                                src="assets/images/project-1.png"
+                                                alt="project"
+                                                className="img-fluid rounded-top mb-3"
+                                            />
+
+                                        </a>
+                                        <div className="team-name">
+                                            <p className="text-mute blog-title">
+                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                                nonummy nibh euismod
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> */}
 
                     </div>
                 </section>
