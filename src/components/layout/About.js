@@ -256,7 +256,7 @@ export default function About() {
                                             <p><strong>Number of Employees:</strong> {item.employees}</p>
                                         </div>
                                         <div className="timeline-image">
-                                            <img src={item.img} alt={item.year} className="img-fluid rounded" />
+                                            <img src={item.img} alt={item.year} className="img-fluid rounded w-100" />
                                         </div>
                                     </div>
                                 </div>

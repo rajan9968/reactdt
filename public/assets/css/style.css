@@ -1769,7 +1769,7 @@ h2.accordion-header {
   width: 100%;
   position: absolute;
   right: 8%;
-  top: 40%;
+  top: 50%;
 
 }
 
@@ -1874,4 +1874,142 @@ h2.accordion-header {
   transform: translate(-50%, -50%);
   z-index: 2;
   box-shadow: 0 0 0 2px #00c49a;
+}
+
+.culture-slider {
+  bottom: -42% !important;
+}
+
+#new-filter .swiper-button-prev,
+#new-filter .swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  cursor: pointer;
+  background: #fff !important;
+  border: 1px solid #cda837 !important;
+  width: 48px;
+  height: 50px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+#second-filter .swiper-button-prev,
+#second-filter .swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  cursor: pointer;
+  background: #fff !important;
+  border: 1px solid #cda837 !important;
+  width: 48px;
+  height: 50px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.investors-section .swiper-button-prev,
+.investors-section .swiper-button-next {
+  top: 70% !important;
+}
+
+
+#new-filter .swiper-button-prev svg,
+#new-filter .swiper-button-next svg {
+  width: 28% !important;
+  height: 34% !important;
+  fill: #cda837 !important;
+  color: #cda837 !important;
+  pointer-events: none;
+}
+
+#second-filter .swiper-button-prev svg,
+#second-filter .swiper-button-next svg {
+  width: 28% !important;
+  height: 34% !important;
+  fill: #cda837 !important;
+  color: #cda837 !important;
+  pointer-events: none;
+}
+
+.investors-section .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden.news-swiper {
+  border-bottom: 1px solid #02A683;
+  width: 80%;
+  text-align: center;
+}
+
+.investors-section #second-filter .filterLink {
+  border: 1px solid #02A683;
+  color: #000;
+  padding: 0.8em;
+  transition: all 0.3s ease;
+  /* smooth transition for color, background, border */
+}
+
+.investors-section #second-filter .filterLink:hover {
+  background-color: #02A683;
+  color: #fff;
+  border-color: #02A683;
+  /* optional if you want border to change smoothly too */
+}
+
+.investors-section #second-filter .swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden.news-swiper {
+  border-bottom: unset;
+  width: 72%;
+}
+
+.custom-table td {
+  padding: 1em;
+}
+
+.custom-table th {
+  background-color: #E6FFF6;
+  padding: 1em;
+  font-weight: 500;
+}
+
+.custom-table {
+  border-color: #02A683;
+}
+
+.custom-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.custom-pagination .page-item .page-link {
+  border: 1px solid #cda349;
+  color: #333;
+  padding: 12px 20px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: 3px;
+}
+
+.custom-pagination .page-item.active .page-link {
+  background-color: #cda349;
+  color: white;
+  border-color: #cda349;
+}
+
+.custom-pagination .page-link:hover {
+  background-color: #cda349;
+  color: #fff;
+}
+
+.custom-pagination .page-link:focus {
+  box-shadow: none;
 }
