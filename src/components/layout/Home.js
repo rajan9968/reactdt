@@ -656,66 +656,7 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-                {/* <section className="what-new py-5">
-                    <div className="container-fluid plr">
-                        <div className="text-center mb-5">
-                            <h2 className="section-title">What's New</h2>
-                            <p className="section-text">
-                                Catch the latest updates and insights reflecting Datta Infra’s
-                                journey and growth.
-                            </p>
-                        </div>
-                        <div id="new-carousel">
-                            <Swiper
-                                className="news-swiper"
-                                modules={[Navigation, Autoplay]}
-                                spaceBetween={20}       // gap between slides
-                                slidesPerView={3}       // number of slides per view
-                                navigation               // enable next/prev buttons
-                                loop={true}             // infinite loop
-                                autoplay={{ delay: 3000 }} // optional autoplay
-                                breakpoints={{          // responsive
-                                    0: { slidesPerView: 1 },
-                                    576: { slidesPerView: 2 },
-                                    992: { slidesPerView: 3 }
-                                }}
-                            >
-                                {newsData.map((item, index) => (
-                                    <SwiperSlide key={index}>
-                                        <div className="news-box">
-                                            <div className="new-image">
-                                                <img src={item.img} className="img-fluid" alt="news" />
-                                            </div>
-                                            <div className="news-content">
-                                                <p>{item.date}</p>
-                                                <p className="content-news-para">{item.text}</p>
-                                                <div className="btn-design-new">
-                                                    <a href="#" className="custom-btn">Read More</a>
-                                                    <svg
-                                                        viewBox="-19.04 0 75.804 75.804"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        fill="#ffffff"
-                                                        stroke="#ffffff"
-                                                    >
-                                                        <g id="Group_65" transform="translate(-831.568 -384.448)">
-                                                            <path
-                                                                id="Path_57"
-                                                                d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z"
-                                                                fill="#ffffff"
-                                                            ></path>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </div>
 
-                    </div>
-                </section> */}
-                {/* What's New end  */}
                 {/* ready to talk start */}
                 <section className="ready">
                     <div className="container-fluid plr">

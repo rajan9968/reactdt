@@ -14,6 +14,14 @@ import PressReleaseDetails from './components/layout/PressReleaseDetails';
 import MediaResources from './components/layout/MediaResources';
 import MediaCoverages from './components/layout/MediaCoverages';
 import Contact from './components/layout/Contact';
+import Awards from './components/layout/Awards';
+import Culture from './components/layout/Culture';
+import Faqs from './components/layout/Faqs';
+import PreDevelopment from './components/layout/PreDevelopment';
+import EPCProject from './components/layout/EPCProject';
+import GridInfrastructure from './components/layout/GridInfrastructure';
+import Independent from './components/layout/Independent';
+import Career from './components/layout/Career';
 
 function App() {
   return (
@@ -34,6 +42,14 @@ function App() {
         <Route path="/media-coverages" element={<MediaCoverages />} />
         <Route path="/media-resources" element={<MediaResources />} />
         <Route path="/contact-us" element={<Contact />} />
+        <Route path="/awards" element={<Awards />} />
+        <Route path="/culture" element={<Culture />} />
+        <Route path="/faqs" element={<Faqs />} />
+        <Route path="/pre-development" element={<PreDevelopment />} />
+        <Route path="/epc-project" element={<EPCProject />} />
+        <Route path="/grid-infrastructure" element={<GridInfrastructure />} />
+        <Route path="/independent-power-producer" element={<Independent />} />
+        <Route path="/careers" element={<Career />} />
       </Routes>
     </BrowserRouter>
   );

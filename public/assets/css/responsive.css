@@ -418,6 +418,18 @@
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1366px) {
+    .join-datta .card-custom p {
+        padding: 0;
+        font-size: 0.8em;
+    }
+
+    .join-datta .card-custom h3 {
+        padding: 0;
+    }
+
+    .culture-slider {
+        bottom: -30% !important;
+    }
 
     .about-banner-caption h2,
     .leadership-banner-caption h2 {

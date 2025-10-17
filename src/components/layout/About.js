@@ -1,8 +1,47 @@
 import React from 'react'
 import Header from "../include/Header";
 import Footer from '../include/Footer';
+import { FaLocationDot } from "react-icons/fa6";
+
 
 export default function About() {
+    const timelineData = [
+        {
+            year: '1987',
+            title: 'Start of the Journey',
+            description: 'Aiming to contribute 30 GW to India’s green energy future by 2030 through large- scale renewable projects, while strengthening our position as a key partner in achieving the nation’s sustainability goals.',
+            employees: '10',
+            img: 'assets/images/timeline-1.png',
+        },
+        {
+            year: '2019',
+            title: 'New Milestone',
+            description: 'Aiming to contribute 30 GW to India’s green energy future by 2030 through large- scale renewable projects, while strengthening our position as a key partner in achieving the nation’s sustainability goals.',
+            employees: '20+',
+            img: 'assets/images/timeline-1.png',
+        },
+        {
+            year: '2020 – 2021',
+            title: 'Consolidation Phase',
+            description: 'Aiming to contribute 30 GW to India’s green energy future by 2030 through large- scale renewable projects, while strengthening our position as a key partner in achieving the nation’s sustainability goals.',
+            employees: '35',
+            img: 'assets/images/timeline-1.png',
+        },
+        {
+            year: '2022',
+            title: 'Global Growth',
+            description: 'Aiming to contribute 30 GW to India’s green energy future by 2030 through large- scale renewable projects, while strengthening our position as a key partner in achieving the nation’s sustainability goals.',
+            employees: '50+',
+            img: 'assets/images/timeline-1.png',
+        },
+        {
+            year: '2024',
+            title: 'Vision 2024',
+            description: 'Aiming to contribute 30 GW to India’s green energy future by 2030 through large- scale renewable projects, while strengthening our position as a key partner in achieving the nation’s sustainability goals.',
+            employees: '55+',
+            img: 'assets/images/timeline-1.png',
+        },
+    ];
     return (
         <div>
             <Header />
@@ -205,12 +244,26 @@ export default function About() {
                         <div className="text-center mb-5">
                             <h2 className="section-title">Timeline</h2>
                         </div>
-                        <img
-                            src="assets/images/timeline-banner.png"
-                            alt="awards"
-                            className="img-fluid"
-                            srcSet=""
-                        />
+                        <div className="timeline">
+                            {timelineData.map((item, index) => (
+                                <div className="timeline-item-wrapper" key={index}>
+                                    <div className="timeline-dot"></div> {/* <-- Circle marker */}
+                                    <div className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+                                        <div className="timeline-content p-3 mb-5">
+                                            <h4 className="year">{item.year}</h4>
+                                            <h5>{item.title}</h5>
+                                            <p>{item.description}</p>
+                                            <p><strong>Number of Employees:</strong> {item.employees}</p>
+                                        </div>
+                                        <div className="timeline-image">
+                                            <img src={item.img} alt={item.year} className="img-fluid rounded" />
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                            <div className="timeline-line"></div>
+                        </div>
+
                     </div>
                 </section>
                 <section className="timeline-banner py-5">
@@ -218,13 +271,59 @@ export default function About() {
                         <div className="text-center mb-5">
                             <h2 className="section-title">Our Presence</h2>
                         </div>
-                        <div className='text-center'>
-                            <img
-                                src="assets/images/our-presence-map.png"
-                                alt="awards"
-                                className="img-fluid"
-                                srcSet=""
-                            />
+                        <div className='row'>
+                            <div className='col-lg-6'>
+                                <div className='text-center'>
+                                    <img
+                                        src="assets/images/our-presence-map.png"
+                                        alt="awards"
+                                        className="img-fluid"
+                                        srcSet=""
+                                    />
+                                </div>
+                            </div>
+                            <div className='col-lg-6'>
+                                <div className="text-start">
+                                    <ul className="list-unstyled m-0">
+                                        <li className="d-flex align-items-start gap-2 mb-4">
+                                            <FaLocationDot className="text-color mt-1 fs-5" />
+                                            <div>
+                                                <span className="fw-semibold">Haryana</span>
+                                                <p className="mb-0 text-muted small">Gurgaon (Head Office)</p>
+                                            </div>
+                                        </li>
+                                        <li className="d-flex align-items-start gap-2 mb-4">
+                                            <FaLocationDot className="text-color mt-1 fs-5" />
+                                            <div>
+                                                <span className="fw-semibold">Rajasthan</span>
+                                                <p className="mb-0 text-muted small">Jaisalmer | Devada | Masooriya | Devikot | Bhagwa
+                                                    Asadi | Bikaner | Merta | Degana | Kalasar</p>
+                                            </div>
+                                        </li>
+                                        <li className="d-flex align-items-start gap-2 mb-4">
+                                            <FaLocationDot className="text-color mt-1 fs-5" />
+                                            <div>
+                                                <span className="fw-semibold">Madhya Pradesh</span>
+                                                <p className="mb-0 text-muted small">Mandsaur</p>
+                                            </div>
+                                        </li>
+                                        <li className="d-flex align-items-start gap-2 mb-4">
+                                            <FaLocationDot className="text-color mt-1 fs-5" />
+                                            <div>
+                                                <span className="fw-semibold">Maharashtra</span>
+                                                <p className="mb-0 text-muted small">Dhule</p>
+                                            </div>
+                                        </li>
+                                        <li className="d-flex align-items-start gap-2 mb-4">
+                                            <FaLocationDot className="text-color mt-1 fs-5" />
+                                            <div>
+                                                <span className="fw-semibold">Andhra Pradesh</span>
+                                                <p className="mb-0 text-muted small">Anantpur | Kurnool</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
