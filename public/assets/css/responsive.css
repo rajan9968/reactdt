@@ -418,6 +418,11 @@
 }
 
 @media only screen and (min-width: 1366px) and (max-width: 1366px) {
+    .work-with-us-card {
+        top: 40%;
+
+    }
+
     .join-datta .card-custom p {
         padding: 0;
         font-size: 0.8em;

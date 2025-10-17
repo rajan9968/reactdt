@@ -200,7 +200,7 @@ export default function Career() {
                                     <img
                                         src="assets/images/test-1.png"
                                         alt="thumbnail"
-                                        className="img-fluid desktop-banner rounded w-100"
+                                        className="img-fluid desktop-banner rounded w-75"
                                     />
 
                                     <p

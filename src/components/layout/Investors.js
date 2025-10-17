@@ -1,10 +1,99 @@
-import React from 'react'
+import React, { useState } from "react";
 import Header from "../include/Header";
-import Footer from '../include/Footer';
-import Form from 'react-bootstrap/Form';
+import Footer from "../include/Footer";
+import { Table, Form, Pagination } from "react-bootstrap"; // ✅ include Pagination here
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay, Pagination as SwiperPagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import { Link } from "react-router-dom";
 
 export default function Investors() {
+
+    const newsData = [
+        {
+            text: "Financial Performance",
+        },
+        {
+            text: "Financial Performance",
+        },
+        {
+            text: "Financial Performance",
+        },
+        {
+            text: "Financial Performance",
+        },
+        {
+            text: "Financial Performance",
+        },
+        {
+            text: "Financial Performance",
+        },
+    ];
+    const newsData2 = [
+        {
+            text: "Annual Reports",
+        },
+        {
+            text: "Annual Reports",
+        },
+        {
+            text: "Annual Reports",
+        },
+        {
+            text: "Annual Reports",
+        },
+        {
+            text: "Annual Reports",
+        },
+        {
+            text: "Annual Reports",
+        },
+    ];
+    // 🧾 Demo data
+    const demo = [
+        { name: "Financial Report Q1", email: "finance@vgigroup.co.in", status: "Active" },
+        { name: "Annual Meeting 2025", email: "meet@vgigroup.co.in", status: "Pending" },
+        { name: "Dividend Update", email: "dividend@vgigroup.co.in", status: "Inactive" },
+        { name: "Corporate Governance", email: "corp@vgigroup.co.in", status: "Active" },
+        { name: "Shareholder Notice", email: "share@vgigroup.co.in", status: "Pending" },
+        { name: "Investor Presentation", email: "invest@vgigroup.co.in", status: "Active" },
+        { name: "Market Analysis", email: "market@vgigroup.co.in", status: "Inactive" },
+        { name: "Quarterly Earnings", email: "earnings@vgigroup.co.in", status: "Active" },
+        { name: "Press Release", email: "press@vgigroup.co.in", status: "Pending" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+        { name: "Audit Report", email: "audit@vgigroup.co.in", status: "Active" },
+    ];
+
+    // ✅ States
+    const [search, setSearch] = useState("");
+    const [filter, setFilter] = useState("All");
+    const [currentPage, setCurrentPage] = useState(1);
+    const rowsPerPage = 10;
+
+    // 🔍 Filter + Search logic
+    const filteredData = demo.filter((item) => {
+        const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase());
+        const matchesFilter = filter === "All" || item.status === filter;
+        return matchesSearch && matchesFilter;
+    });
+
+    // 📄 Pagination logic
+    const indexOfLastRow = currentPage * rowsPerPage;
+    const indexOfFirstRow = indexOfLastRow - rowsPerPage;
+    const currentRows = filteredData.slice(indexOfFirstRow, indexOfLastRow);
+    const totalPages = Math.ceil(filteredData.length / rowsPerPage);
     return (
         <div>
             <Header />
@@ -22,7 +111,6 @@ export default function Investors() {
                             <ul className="path-women-empow">
                                 <li>
                                     <a href="index.php">Home</a>
-
                                 </li>
                                 <li className="text-white">/</li>
                                 <li>
@@ -31,110 +119,177 @@ export default function Investors() {
                             </ul>
                         </div>
                     </div>
-
                 </section>
-                <section className='project-section py-5'>
+                <section className="what-new investors-section py-5 bg-white">
                     <div className="container-fluid plr">
-                        <div className="row">
-                            <div className="col-lg-3"></div>
-                            <div className="col-lg-6">
-                                <div className="text-center mb-5">
-                                    <h2 className="section-title">Press Releases</h2>
-                                </div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="d-flex gap-1">
-                                    <div className="search-bar">
-                                        <i className="fa fa-search"></i>
-                                        <input
-                                            type="text"
-                                            placeholder="Search..."
-                                        />
-                                    </div>
-                                    <Form.Select aria-label="Default select example" style={{ width: "40%" }}>
-                                        <option>Year</option>
-                                        <option value="1">2025</option>
-                                        <option value="2">2024</option>
-                                        <option value="3">2023</option>
-                                        <option value="3">2022</option>
-                                        <option value="3">2021</option>
-                                        <option value="3">2020</option>
-                                        <option value="3">2019</option>
-                                    </Form.Select>
-                                </div>
-                            </div>
+                        <div id="new-filter" className="mt-5" style={{ position: "relative" }}>
+                            {/* Custom Navigation Buttons */}
+                            <div className="swiper-button-prev new-prev"></div>
+                            <div className="swiper-button-next new-next"></div>
+
+                            <Swiper
+                                className="news-swiper"
+                                modules={[Navigation, Autoplay]}
+                                spaceBetween={20}
+                                slidesPerView={3}
+                                navigation={{
+                                    prevEl: ".new-prev",
+                                    nextEl: ".new-next",
+                                }}
+                                loop={true}
+                                autoplay={{ delay: 3000 }}
+                                breakpoints={{
+                                    0: { slidesPerView: 1 },
+                                    576: { slidesPerView: 2 },
+                                    992: { slidesPerView: 5 },
+                                }}
+                            >
+                                {newsData.map((item, index) => (
+                                    <SwiperSlide key={index}>
+                                        <div>
+                                            <p>{item.text}</p>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
                         </div>
 
+                        <div id="second-filter" className="second-filter mt-5" style={{ position: "relative" }}>
+                            {/* Custom Navigation Buttons */}
+                            <div className="swiper-button-prev second-prev"></div>
+                            <div className="swiper-button-next second-next"></div>
 
+                            <Swiper
+                                className="news-swiper"
+                                modules={[Navigation, Autoplay]}
+                                spaceBetween={20}
+                                slidesPerView={3}
+                                navigation={{
+                                    prevEl: ".second-prev",
+                                    nextEl: ".second-next",
+                                }}
+                                loop={true}
+                                // autoplay={{ delay: 3000 }}
+                                breakpoints={{
+                                    0: { slidesPerView: 1 },
+                                    576: { slidesPerView: 2 },
+                                    992: { slidesPerView: 5 },
+                                }}
+                            >
+                                {newsData2.map((item, index) => (
+                                    <SwiperSlide key={index}>
+                                        <Link>
+                                            <div className="filterLink">
+                                                {item.text}
+                                            </div>
+                                        </Link>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
 
-                        <div className="row align-items-center">
-                            <div className="col-lg-4 mb-4">
-                                <img
-                                    src="assets/images/newsroom-1.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded"
-                                />
-                            </div>
-                            <div className='col-lg-8 newsroom'>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                <p>Date: xx/xxx/xxxx</p>
-                                <p>Publication:</p>
-                            </div>
-                        </div>
-                        <div className="row align-items-center">
-                            <div className="col-lg-4 mb-4">
-                                <img
-                                    src="assets/images/newsroom-1.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded"
-                                />
-                            </div>
-                            <div className='col-lg-8 newsroom'>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                <p>Date: xx/xxx/xxxx</p>
-                                <p>Publication:</p>
-                            </div>
-                        </div>
-                        <div className="row align-items-center">
-                            <div className="col-lg-4 mb-4">
-                                <img
-                                    src="assets/images/newsroom-1.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded"
-                                />
-                            </div>
-                            <div className='col-lg-8 newsroom'>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                <p>Date: xx/xxx/xxxx</p>
-                                <p>Publication:</p>
-                            </div>
-                        </div>
-                        <div className="my-3 text-center d-flex justify-content-center">
-                            <div className="btn-design">
-                                <Link to="/press-release-details" className="custom-btn">
-                                    Load More
-                                    <svg
-                                        viewBox="-19.04 0 75.804 75.804"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="#ffffff"
-                                        stroke="#ffffff"
-                                    >
-                                        <g id="Group_65" transform="translate(-831.568 -384.448)">
-                                            <path
-                                                id="Path_57"
-                                                d="M833.068,460.252a1.5,1.5,0,0,1-1.061-2.561l33.557-33.56a2.53,2.53,0,0,0,0-3.564l-33.557-33.558a1.5,1.5,0,0,1,2.122-2.121l33.556,33.558a5.53,5.53,0,0,1,0,7.807l-33.557,33.56A1.5,1.5,0,0,1,833.068,460.252Z"
-                                                fill="#ffffff"
-                                            ></path>
-                                        </g>
-                                    </svg>
-                                </Link>
-                            </div></div>
                     </div>
                 </section>
+                <section className="bg-white">
+                    <div className="container-fluid plr">
+
+                        <div className="custom-table-container">
+                            <div className="row mb-3">
+                                <div className="col-lg-6">
+                                    <label className="pb-1">Year</label>
+                                    <Form.Select
+                                        className="search-bar"
+                                        value={filter}
+                                        onChange={(e) => {
+                                            setFilter(e.target.value);
+                                            setCurrentPage(1);
+                                        }}
+                                    >
+                                        <option value="All">All Status</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Pending">Pending</option>
+                                        <option value="Inactive">Inactive</option>
+                                    </Form.Select>
+                                </div>
+                                <div className="col-lg-6 d-flex justify-content-end">
+                                    <div>
+                                        <label className="pb-1"></label>
+                                        <Form.Control
+                                            type="text"
+                                            placeholder="Search by name..."
+                                            className="search-bar"
+                                            value={search}
+                                            onChange={(e) => {
+                                                setSearch(e.target.value);
+                                                setCurrentPage(1);
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 📋 Table */}
+                            <Table hover responsive className="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th colSpan="4" className="text-start">Title</th>
+                                        <th className="text-start">Year</th>
+                                        <th className="text-start">Download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {currentRows.length > 0 ? (
+                                        currentRows.map((item, index) => (
+                                            <tr key={index}>
+                                                <td colspan="4" style={{ width: "70%" }}>{item.name}</td>
+
+                                                <td>{2025 - index}</td>
+
+                                                {/* 1 column for “Download” */}
+                                                <td>
+                                                    <Link className="text-black">
+                                                        Link</Link>
+                                                </td>
+                                            </tr>
+                                        ))
+                                    ) : (
+                                        <tr>
+                                            <td colSpan="5" className="text-center">No data found</td>
+                                        </tr>
+                                    )}
+                                </tbody>
+                            </Table>
 
 
+                            {/* 🔢 Pagination */}
+
+                            <Pagination className="custom-pagination">
+                                <div> <p>Showing 1-20 of 20 items</p></div>
+                                <div className="d-flex gap-2"> <Pagination.Prev
+                                    onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                                    disabled={currentPage === 1}
+                                />
+                                    {[...Array(totalPages)].map((_, i) => (
+                                        <Pagination.Item
+                                            key={i + 1}
+                                            active={i + 1 === currentPage}
+                                            onClick={() => setCurrentPage(i + 1)}
+                                        >
+                                            {i + 1}
+                                        </Pagination.Item>
+                                    ))}
+                                    <Pagination.Next
+                                        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                                        disabled={currentPage === totalPages}
+                                    /></div>
+                            </Pagination>
+
+                        </div>
+                    </div>
+                </section>
             </main>
+
             <Footer />
         </div>
-    )
+    );
 }
