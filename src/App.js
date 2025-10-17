@@ -22,6 +22,7 @@ import EPCProject from './components/layout/EPCProject';
 import GridInfrastructure from './components/layout/GridInfrastructure';
 import Independent from './components/layout/Independent';
 import Career from './components/layout/Career';
+import Investors from './components/layout/Investors';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path="/grid-infrastructure" element={<GridInfrastructure />} />
         <Route path="/independent-power-producer" element={<Independent />} />
         <Route path="/careers" element={<Career />} />
+        <Route path="/investors" element={<Investors />} />
       </Routes>
     </BrowserRouter>
   );
