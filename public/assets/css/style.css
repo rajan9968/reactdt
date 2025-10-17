@@ -1873,5 +1873,5 @@ h2.accordion-header {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  ` box-shadow: 0 0 0 2px #00c49a;
+  box-shadow: 0 0 0 2px #00c49a;
 }
