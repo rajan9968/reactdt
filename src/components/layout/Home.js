@@ -201,12 +201,12 @@ export default function Home() {
                         ))}
 
                         {/* Navigation Arrows */}
-                        <button className="slider-arrow prev" onClick={prevSlide}>
+                        {/* <button className="slider-arrow prev" onClick={prevSlide}>
                             &#10094;
                         </button>
                         <button className="slider-arrow next" onClick={nextSlide}>
                             &#10095;
-                        </button>
+                        </button> */}
 
                         {/* Dots */}
                         <div className="slider-nav">
