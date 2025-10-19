@@ -864,3 +864,9 @@
         justify-content: unset !important;
     }
 }
+
+@media (min-width: 321px) and (max-width: 424px) {
+    .news-content .btn-design-new {
+    width: 50%;
+}
+}
