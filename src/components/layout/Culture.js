@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../include/Header";
 import Footer from '../include/Footer';
+import GLightbox from "glightbox";
+import "glightbox/dist/css/glightbox.min.css";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 export default function Culture() {
+    useEffect(() => {
+        const lightbox = GLightbox({
+            selector: ".glightbox",
+            touchNavigation: true,
+            loop: true,
+        });
+        return () => {
+            lightbox.destroy();
+        };
+    }, []);
+
     const slides = [
         {
             title: "Lorem ipsum",
@@ -131,13 +144,24 @@ export default function Culture() {
                                     <SwiperSlide key={index}>
                                         <div className="news-box rounded">
                                             <div className="new-image">
-                                                <img src={item.img} className="img-fluid rounded" alt="news" />
+                                                <a
+                                                    href={item.img} // full image path
+                                                    className="glightbox"
+                                                    data-gallery="news-gallery"
+                                                >
+                                                    <img
+                                                        src={item.img}
+                                                        className="img-fluid rounded"
+                                                        alt="news"
+                                                    />
+                                                </a>
+                                                {/* <img src={item.img} className="img-fluid rounded" alt="news" /> */}
                                             </div>
-                                            <div className="news-content rounded-bottom">
+                                            {/* <div className="news-content rounded-bottom">
                                                 <p className="award-title">Award: Lorem ipsum</p>
                                                 <p className="award-title">Catagory: Lorem ipsum</p>
                                                 <p className="award-title">Date: Lorem ipsum</p>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </SwiperSlide>
                                 ))}
@@ -203,7 +227,7 @@ export default function Culture() {
                     </div>
                 </section>
                 <section
-                    className="our-portfolio mb-4"
+                    className="our-portfolio"
                     style={{
                         background: `url(${slides[activeIndex].bgImage}) no-repeat center center/cover`,
                         minHeight: "80vh",

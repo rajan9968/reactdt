@@ -20,6 +20,10 @@ body {
   padding-left: 0;
 }
 
+.pl-4 {
+  padding-left: 4em;
+}
+
 .bg-color {
   background-color: #02A683 !important;
 }
@@ -31,6 +35,7 @@ body {
 .plr {
   padding: 0 7.13em;
 }
+
 
 .nav {
   position: fixed;
@@ -931,6 +936,10 @@ div#offcanvasRight {
   color: #fff;
   font-size: 2.2em;
   font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .offcanvas-menu .custom-fa {
@@ -1694,13 +1703,14 @@ button.accordion-button {
 }
 
 h2.accordion-header {
-  padding: 16px;
+  padding: 10px;
 }
 
 .accordion-item {
   border-color: #CAA537;
   border-radius: 0.375rem;
   border-top: 1px solid #CAA537 !important;
+  margin: 1em 0;
 }
 
 .accordion-button::after {
@@ -1761,7 +1771,7 @@ h2.accordion-header {
 }
 
 .work-with-us-card {
-  background-color: #FFFFFF;
+  background-color: #ffffffc7;
   border-radius: 10px;
   border: 1px solid #CAA537;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -1797,7 +1807,7 @@ h2.accordion-header {
   left: 50%;
   width: 4px;
   height: 100%;
-  background-color: #00c49a;
+  background-color: #C8A337;
   transform: translateX(-50%);
   z-index: 0;
 }
@@ -2012,4 +2022,71 @@ h2.accordion-header {
 
 .custom-pagination .page-link:focus {
   box-shadow: none;
+}
+
+
+.trusted-logos .swiper-wrapper {
+  align-items: center;
+}
+
+.power-content h4 {
+  color: #02A683;
+}
+
+
+.card-cbb {
+  overflow: hidden;
+  /* hides overflow when image zooms */
+}
+
+.card-cbb img {
+  transition: transform 0.6s ease;
+  /* smooth zoom */
+}
+
+.tag-link:hover .card-cbb img {
+  transform: scale(1.1);
+  /* zoom on parent hover */
+}
+
+.media-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  /* same as image */
+}
+
+.media-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 19%);
+  /* black tint */
+  pointer-events: none;
+  /* clicks go through */
+}
+
+.glightbox-clean .gslide-title {
+  z-index: 1;
+  position: relative;
+}
+
+.glightbox-clean .gdesc-inner::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 38%);
+  /* black tint */
+  pointer-events: none;
+  /* clicks go through */
+}
+
+.accordion-body {
+  padding: 1em 2em;
 }

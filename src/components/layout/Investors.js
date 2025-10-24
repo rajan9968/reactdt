@@ -205,10 +205,14 @@ export default function Investors() {
                                             setCurrentPage(1);
                                         }}
                                     >
-                                        <option value="All">All Status</option>
-                                        <option value="Active">Active</option>
-                                        <option value="Pending">Pending</option>
-                                        <option value="Inactive">Inactive</option>
+                                        <option value="All">Selact All</option>
+                                        <option value="Active">FY 2022-2023</option>
+                                        <option value="Active">FY 2022-2023</option>
+                                        <option value="Active">FY 2022-2023</option>
+                                        <option value="Active">FY 2022-2023</option>
+                                        <option value="Active">FY 2022-2023</option>
+                                        <option value="Active">FY 2022-2023</option>
+
                                     </Form.Select>
                                 </div>
                                 <div className="col-lg-6 d-flex justify-content-end">

@@ -5,9 +5,7 @@ import 'swiper/css/navigation';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 import Header from "../include/Header";
 import Footer from "../include/Footer";
-
-
-
+import { Link } from "react-router-dom";
 
 export default function Home() {
     const logos = [
@@ -235,63 +233,71 @@ export default function Home() {
                         <div className="row g-5">
                             {/* Pre-Development EPC */}
                             <div className="col-md-6 col-lg-3 col-6">
-                                <div className="card-custom">
-                                    <img
-                                        src="assets/images/bussniess-icon-1.png"
-                                        className="card-image"
-                                        alt="Pre-Development EPC"
-                                    />
-                                    <h3>Pre-Development EPC</h3>
-                                    <p>
-                                        Laying the groundwork with site selection, approvals, and
-                                        project readiness.
-                                    </p>
-                                </div>
+                                <Link to="/pre-development">
+                                    <div className="card-custom">
+                                        <img
+                                            src="assets/images/bussniess-icon-1.png"
+                                            className="card-image"
+                                            alt="Pre-Development EPC"
+                                        />
+                                        <h3>Pre-Development EPC</h3>
+                                        <p>
+                                            Laying the groundwork with site selection, approvals, and
+                                            project readiness.
+                                        </p>
+                                    </div>
+                                </Link>
                             </div>
                             {/* Turnkey EPC Projects */}
                             <div className="col-md-6 col-lg-3 col-6">
-                                <div className="card-custom">
-                                    <img
-                                        src="assets/images/bussniess-icon-2.png"
-                                        className="card-image"
-                                        alt="Turnkey EPC Projects"
-                                    />
-                                    <h3>Turnkey EPC Projects</h3>
-                                    <p>
-                                        Delivering end-to-end execution covering design, procurement,
-                                        construction, and O&amp;M.
-                                    </p>
-                                </div>
+                                <Link to="/epc-project">
+                                    <div className="card-custom">
+                                        <img
+                                            src="assets/images/bussniess-icon-2.png"
+                                            className="card-image"
+                                            alt="Turnkey EPC Projects"
+                                        />
+                                        <h3>Turnkey EPC Projects</h3>
+                                        <p>
+                                            Delivering end-to-end execution covering design, procurement,
+                                            construction, and O&amp;M.
+                                        </p>
+                                    </div>
+                                </Link>
                             </div>
                             {/* Grid Infrastructure */}
                             <div className="col-md-6 col-lg-3 col-6">
-                                <div className="card-custom">
-                                    <img
-                                        src="assets/images/bussniess-icon-3.png"
-                                        className="card-image"
-                                        alt="Grid Infrastructure"
-                                    />
-                                    <h3>Grid Infrastructure</h3>
-                                    <p>
-                                        Seamless grid integration with reliable planning, construction,
-                                        and maintenance.
-                                    </p>
-                                </div>
+                                <Link to="/grid-infrastructure">
+                                    <div className="card-custom">
+                                        <img
+                                            src="assets/images/bussniess-icon-3.png"
+                                            className="card-image"
+                                            alt="Grid Infrastructure"
+                                        />
+                                        <h3>Grid Infrastructure</h3>
+                                        <p>
+                                            Seamless grid integration with reliable planning, construction,
+                                            and maintenance.
+                                        </p>
+                                    </div>
+                                </Link>
                             </div>
                             {/* Independent Power Producer */}
                             <div className="col-md-6 col-lg-3 col-6">
-                                <div className="card-custom">
-                                    <img
-                                        src="assets/images/bussniess-icon-4.png"
-                                        className="card-image"
-                                        alt="Independent Power Producer"
-                                    />
-                                    <h3>Independent Power Producer</h3>
-                                    <p>
-                                        Own, operate, and generate clean power with optimized sites and
-                                        compliance.
-                                    </p>
-                                </div>
+                                <Link to="/independent-power-producer">
+                                    <div className="card-custom">
+                                        <img
+                                            src="assets/images/bussniess-icon-4.png"
+                                            className="card-image"
+                                            alt="Independent Power Producer"
+                                        />
+                                        <h3>Independent Power Producer</h3>
+                                        <p>
+                                            Own, operate, and generate clean power with optimized sites and
+                                            compliance.
+                                        </p>
+                                    </div>
+                                </Link>
                             </div>
                         </div>
                         <div className="trusted-section mt-5">
@@ -431,7 +437,7 @@ export default function Home() {
                     </div>
                 </section>
                 <section
-                    className="our-portfolio mb-4"
+                    className="our-portfolio mb-4 bg-white"
                     style={{
                         background: `url(${slides[activeIndex].bgImage}) no-repeat center center/cover`,
                         minHeight: "80vh",
@@ -451,7 +457,7 @@ export default function Home() {
                             <p>{slides[activeIndex].description}</p>
                         </div>
 
-                        <div className="btn-design">
+                        <div className="btn-design d-flex justify-content-center align-items-center gap-2">
                             <a href="" className="custom-btn">
                                 View Our Portfolio
                             </a>

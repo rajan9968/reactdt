@@ -48,7 +48,7 @@ export default function About() {
             <main>
                 <section className="about-banner position-relative wings-top-section">
                     <img
-                        src="assets/images/about-banner-datta.png"
+                        src="assets/images/about-us-banner.png"
                         alt="awards"
                         className="img-fluid desktop-banner"
                         srcSet=""
@@ -148,7 +148,7 @@ export default function About() {
                             <div className="col-md-6 col-lg-4 col-6">
                                 <div className="card-custom">
                                     <img
-                                        src="assets/images/purpose-icon.png"
+                                        src="assets/images/pur-icon.png"
                                         className="card-image"
                                         alt="Independent Power Producer"
                                     />
@@ -242,7 +242,7 @@ export default function About() {
                 <section className="timeline-banner">
                     <div className="container-fluid plr">
                         <div className="text-center mb-5">
-                            <h2 className="section-title">Timeline</h2>
+                            <h2 className="section-title">Our Journey</h2>
                         </div>
                         <div className="timeline">
                             {timelineData.map((item, index) => (
@@ -283,7 +283,7 @@ export default function About() {
                                 </div>
                             </div>
                             <div className='col-lg-6'>
-                                <div className="text-start">
+                                <div className="text-start pl-4">
                                     <ul className="list-unstyled m-0">
                                         <li className="d-flex align-items-start gap-2 mb-4">
                                             <FaLocationDot className="text-color mt-1 fs-5" />

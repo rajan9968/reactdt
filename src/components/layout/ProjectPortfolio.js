@@ -43,20 +43,20 @@ export default function ProjectPortfolio() {
                         </div>
                         <div className="row">
                             <div className="col-lg-4 mb-4">
-                                <Link to="/project-details" className="text-black text-decoration-none">
-                                    <div
-                                        className="team-card shadow rounded bg-light cursor-pointer">
-                                        <img
-                                            src="assets/images/project-1.png"
-                                            alt="project"
-                                            className="img-fluid rounded-top mb-3"
-                                        />
-                                        <div className="team-name">
-                                            <h5 className="mb-1">Bikaner, Rajasthan</h5>
-                                            <p className="text-mute"> Solar (Single Location)</p>
-                                        </div>
+                                {/* <Link to="/project-details" className="text-black text-decoration-none"> */}
+                                <div className="news-box rounded">
+                                    <div className="new-image">
+                                        <img src="assets/images/project-1.png" className="img-fluid rounded" alt="news" />
                                     </div>
-                                </Link>
+                                    <div className="news-content rounded-bottom">
+                                        <p className="award-title mb-0">Bikaner, Rajasthan</p>
+                                        <p className="text-mute mb-0"> Solar (Single Location)</p>
+                                        <p className="content-news-para">Loremipsumdolorsitamet,consectetuer adipiscingelit,seddiamnonummynibheuismod tinciduntutlaoreetdoloremagnaaliquamerat volutpat.Utwisienimadminimveniam,quis</p>
+
+                                    </div>
+                                </div>
+
+                                {/* </Link> */}
                             </div>
                             <div className="col-lg-12 my-5 text-center d-flex justify-content-center">
                                 <div className="btn-design">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../include/Header";
 import Footer from '../include/Footer';
 import { Link } from "react-router-dom";
@@ -14,6 +14,34 @@ export default function PreDevelopment() {
         { img: "assets/images/join-2.png", alt: "Join 2" },
         // add more slides here
     ];
+    const counters = [
+        { value: 6.6, label: "Completed Pre-Development Projects" },
+        { value: 6.7, label: "Ongoing Pre-Development Projects" },
+        { value: 2.7, label: "In-Pipeline Pre-Development Projects" },
+    ];
+
+    const [counts, setCounts] = useState(counters.map(() => 0));
+
+    useEffect(() => {
+        const duration = 2000; // animation time in ms
+        const steps = 100;
+        const intervalTime = duration / steps;
+
+        const intervals = counters.map((counter, i) => {
+            let step = 0;
+            return setInterval(() => {
+                step++;
+                setCounts((prev) =>
+                    prev.map((val, idx) =>
+                        idx === i ? parseFloat(((counter.value / steps) * step).toFixed(1)) : val
+                    )
+                );
+                if (step >= steps) clearInterval(intervals[i]);
+            }, intervalTime);
+        });
+
+        return () => intervals.forEach(clearInterval);
+    }, []);
     return (
         <div>
             <Header />
@@ -43,16 +71,15 @@ export default function PreDevelopment() {
 
                 </section>
 
-                <section className="powering-progres bg-white py-5">
+                <section className="powering-progre bg-white py-5">
                     <div className="container-fluid plr">
                         <div className="text-center mb-5">
                             <h2 className="section-title">
                                 Overview
                             </h2>
-
                         </div>
                         <div className="row">
-                            <div className="col-lg-7">
+                            <div className="col-lg-6">
                                 <div className="power-img">
                                     <img
                                         src="assets/images/pro-1.png"
@@ -62,7 +89,7 @@ export default function PreDevelopment() {
                                     />
                                 </div>
                             </div>
-                            <div className="col-lg-5 d-flex flex-column">
+                            <div className="col-lg-6 d-flex flex-column">
                                 <div className="power-content mb-auto">
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetuer adipiscing ipsum dolor
@@ -89,25 +116,19 @@ export default function PreDevelopment() {
 
                         </div>
                         <div className="row text-center mt-4">
-                            <div className="col-md-4">
-                                <h3 className="display-4">6.6 GW</h3>
-                                <p>Completed Pre-Development Projects</p>
-                            </div>
-                            <div className="col-md-4 pro-del">
-                                <h3 className="display-4">6.7 GW</h3>
-                                <p>Ongoing Pre-Development Projects</p>
-                            </div>
-                            <div className="col-md-4">
-                                <h3 className="display-4">2.7 GW</h3>
-                                <p>In-Pipeline Pre-Development Projects</p>
-                            </div>
+                            {counters.map((item, index) => (
+                                <div className="col-md-4" key={index}>
+                                    <h3 className="display-4">{counts[index]} GW</h3>
+                                    <p>{item.label}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
                 <section className="what-new py-5 bg-white">
                     <div className="container-fluid plr">
                         <div className="text-center mb-5">
-                            <h2 className="section-title">Spotlight</h2>
+                            <h2 className="section-title">Our Approch</h2>
 
                         </div>
                         <div className="row" id="new-carousel" style={{ position: 'relative' }}>
@@ -156,7 +177,7 @@ export default function PreDevelopment() {
                 <section className="join-us our-project py-5">
                     <div className="container-fluid plr">
                         <div className="text-center mb-5">
-                            <h2 className="section-title">Our Projects</h2>
+                            <h2 className="section-title">Key Projects</h2>
                         </div>
                         {/* Owl Carousel */}
                         <div id="join-carousel-w" className="join-carousel-wrapper">
@@ -177,6 +198,7 @@ export default function PreDevelopment() {
                                 {slides2.map((slide, index) => (
                                     <SwiperSlide key={index}>
                                         <img src={slide.img} className="img-fluid" alt={slide.alt} />
+                                        <p className="pt-2">Lorem ipsum</p>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>

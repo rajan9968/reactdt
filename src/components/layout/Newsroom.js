@@ -40,51 +40,81 @@ export default function Newsroom() {
                                     <h2 className="section-title">Press Releases</h2>
                                 </div>
                             </div>
-
                         </div>
 
+                        <div className="row align-items-center">
+                            <Link to="/news-detail" className="d-flex text-black w-100 align-items-center tag-link" style={{ textDecoration: "none" }}>
+                                <div className="col-lg-4 mb-4">
+                                    <div className="card-cbb overflow-hidden">
+                                        <img
+                                            src="assets/images/newsroom-1.png"
+                                            alt="awards"
+                                            className="img-fluid desktop-banner card-img-top rounded w-100"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-lg-8 newsroom">
+                                    <div className='px-4'>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                            volutpat.
+                                        </p>
+                                        <p>Date: xx/xxx/xxxx</p>
+                                        <p>Publication:</p>
+                                    </div>
+                                </div>
+                            </Link>
+                        </div>
 
                         <div className="row align-items-center">
-                            <div className="col-lg-4 mb-4">
-                                <img
-                                    src="assets/images/newsroom-1.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded w-100"
-                                />
-                            </div>
-                            <div className='col-lg-8 newsroom'>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                <p>Date: xx/xxx/xxxx</p>
-                                <p>Publication:</p>
-                            </div>
+                            <Link to="/news-detail" className="d-flex text-black w-100 align-items-center tag-link" style={{ textDecoration: "none" }}>
+                                <div className="col-lg-4 mb-4">
+                                    <div className="card-cbb overflow-hidden">
+                                        <img
+                                            src="assets/images/newsroom-1.png"
+                                            alt="awards"
+                                            className="img-fluid desktop-banner card-img-top rounded w-100"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-lg-8 newsroom">
+                                    <div className='px-4'>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                            volutpat.
+                                        </p>
+                                        <p>Date: xx/xxx/xxxx</p>
+                                        <p>Publication:</p>
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
+
                         <div className="row align-items-center">
-                            <div className="col-lg-4 mb-4">
-                                <img
-                                    src="assets/images/newsroom-1.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded w-100"
-                                />
-                            </div>
-                            <div className='col-lg-8 newsroom'>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                <p>Date: xx/xxx/xxxx</p>
-                                <p>Publication:</p>
-                            </div>
-                        </div>
-                        <div className="row align-items-center">
-                            <div className="col-lg-4 mb-4">
-                                <img
-                                    src="assets/images/newsroom-1.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded w-100"
-                                />
-                            </div>
-                            <div className='col-lg-8 newsroom'>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                <p>Date: xx/xxx/xxxx</p>
-                                <p>Publication:</p>
-                            </div>
+                            <Link to="/news-detail" className="d-flex text-black w-100 align-items-center tag-link" style={{ textDecoration: "none" }}>
+                                <div className="col-lg-4 mb-4">
+                                    <div className="card-cbb overflow-hidden">
+                                        <img
+                                            src="assets/images/newsroom-1.png"
+                                            alt="awards"
+                                            className="img-fluid desktop-banner card-img-top rounded w-100"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-lg-8 newsroom">
+                                    <div className='px-4'>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                            volutpat.
+                                        </p>
+                                        <p>Date: xx/xxx/xxxx</p>
+                                        <p>Publication:</p>
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
                         <div className="my-3 text-center d-flex justify-content-center">
                             <div className="btn-design">
@@ -119,46 +149,76 @@ export default function Newsroom() {
                             </div>
                         </div>
                         <div className="row align-items-center">
-                            <div className="col-lg-4 mb-4">
-                                <img
-                                    src="assets/images/newsroom-1.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded w-100"
-                                />
-                            </div>
-                            <div className='col-lg-8 newsroom'>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                <p>Date: xx/xxx/xxxx</p>
-                                <p>Publication:</p>
-                            </div>
+                            <Link to="/news-detail" className="d-flex text-black w-100 align-items-center tag-link" style={{ textDecoration: "none" }}>
+                                <div className="col-lg-4 mb-4">
+                                    <div className="card-cbb overflow-hidden">
+                                        <img
+                                            src="assets/images/newsroom-1.png"
+                                            alt="awards"
+                                            className="img-fluid desktop-banner card-img-top rounded w-100"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-lg-8 newsroom">
+                                    <div className='px-4'>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                            volutpat.
+                                        </p>
+                                        <p>Date: xx/xxx/xxxx</p>
+                                        <p>Publication:</p>
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
                         <div className="row align-items-center">
-                            <div className="col-lg-4 mb-4">
-                                <img
-                                    src="assets/images/newsroom-1.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded w-100"
-                                />
-                            </div>
-                            <div className='col-lg-8 newsroom'>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                <p>Date: xx/xxx/xxxx</p>
-                                <p>Publication:</p>
-                            </div>
+                            <Link to="/news-detail" className="d-flex text-black w-100 align-items-center tag-link" style={{ textDecoration: "none" }}>
+                                <div className="col-lg-4 mb-4">
+                                    <div className="card-cbb overflow-hidden">
+                                        <img
+                                            src="assets/images/newsroom-1.png"
+                                            alt="awards"
+                                            className="img-fluid desktop-banner card-img-top rounded w-100"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-lg-8 newsroom">
+                                    <div className='px-4'>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                            volutpat.
+                                        </p>
+                                        <p>Date: xx/xxx/xxxx</p>
+                                        <p>Publication:</p>
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
                         <div className="row align-items-center">
-                            <div className="col-lg-4 mb-4">
-                                <img
-                                    src="assets/images/newsroom-1.png"
-                                    alt="awards"
-                                    className="img-fluid desktop-banner rounded w-100"
-                                />
-                            </div>
-                            <div className='col-lg-8 newsroom'>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                <p>Date: xx/xxx/xxxx</p>
-                                <p>Publication:</p>
-                            </div>
+                            <Link to="/news-detail" className="d-flex text-black w-100 align-items-center tag-link" style={{ textDecoration: "none" }}>
+                                <div className="col-lg-4 mb-4">
+                                    <div className="card-cbb overflow-hidden">
+                                        <img
+                                            src="assets/images/newsroom-1.png"
+                                            alt="awards"
+                                            className="img-fluid desktop-banner card-img-top rounded w-100"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="col-lg-8 newsroom">
+                                    <div className='px-4'>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                                            volutpat.
+                                        </p>
+                                        <p>Date: xx/xxx/xxxx</p>
+                                        <p>Publication:</p>
+                                    </div>
+                                </div>
+                            </Link>
                         </div>
                         <div className="my-3 text-center d-flex justify-content-center">
                             <div className="btn-design">
@@ -193,31 +253,25 @@ export default function Newsroom() {
                             </div>
 
                         </div>
-
-
                         <div className="row align-items-center">
                             <div className="col-lg-6 mb-4">
-                                <div className='position-relative'>
+                                <div className="media-card">
                                     <img
                                         src="assets/images/media-1.png"
-                                        alt="awards"
+                                        alt="Photos"
                                         className="img-fluid desktop-banner rounded w-100"
                                     />
                                     <p className='media-text'>Photos</p>
                                 </div>
                             </div>
                             <div className="col-lg-6 mb-4">
-                                <div className="position-relative">
+                                <div className="media-card">
                                     <img
                                         src="assets/images/media-2.png"
-                                        alt="awards"
+                                        alt="Videos"
                                         className="img-fluid desktop-banner rounded w-100"
                                     />
-
-                                    <p
-                                        className="media-text position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center"
-                                        style={{ margin: 0 }}
-                                    >
+                                    <p className="media-text position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center" style={{ margin: 0 }}>
                                         <img
                                             src="assets/images/play-icon.png"
                                             alt="play"
@@ -227,7 +281,6 @@ export default function Newsroom() {
                                     <p className='media-text'>Videos</p>
                                 </div>
                             </div>
-
                         </div>
 
                     </div>

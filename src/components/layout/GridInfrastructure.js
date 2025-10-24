@@ -52,7 +52,7 @@ export default function GridInfrastructure() {
 
                         </div>
                         <div className="row">
-                            <div className="col-lg-7">
+                            <div className="col-lg-6">
                                 <div className="power-img">
                                     <img
                                         src="assets/images/pro-1.png"
@@ -62,7 +62,7 @@ export default function GridInfrastructure() {
                                     />
                                 </div>
                             </div>
-                            <div className="col-lg-5 d-flex flex-column">
+                            <div className="col-lg-6 d-flex flex-column">
                                 <div className="power-content mb-auto">
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetuer adipiscing ipsum dolor
@@ -111,7 +111,7 @@ export default function GridInfrastructure() {
                 <section className="what-new py-5 bg-white">
                     <div className="container-fluid plr">
                         <div className="text-center mb-5">
-                            <h2 className="section-title">Spotlight</h2>
+                            <h2 className="section-title">Our Approch</h2>
 
                         </div>
                         <div className="row" id="new-carousel" style={{ position: 'relative' }}>
@@ -160,7 +160,7 @@ export default function GridInfrastructure() {
                 <section className="join-us our-project py-5">
                     <div className="container-fluid plr">
                         <div className="text-center mb-5">
-                            <h2 className="section-title">Our Projects</h2>
+                            <h2 className="section-title">Key Projects</h2>
                         </div>
                         {/* Owl Carousel */}
                         <div id="join-carousel-w" className="join-carousel-wrapper">
@@ -181,6 +181,7 @@ export default function GridInfrastructure() {
                                 {slides2.map((slide, index) => (
                                     <SwiperSlide key={index}>
                                         <img src={slide.img} className="img-fluid" alt={slide.alt} />
+                                        <p className="pt-2">Lorem ipsum</p>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>

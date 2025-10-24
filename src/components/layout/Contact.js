@@ -3,6 +3,7 @@ import Header from "../include/Header";
 import Footer from '../include/Footer';
 import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "react-router-dom";
+import Select from "../admin2/views/forms/select/Select";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -79,14 +80,14 @@ export default function Contact() {
                         <form onSubmit={handleSubmit}>
                             <div className="row mb-3">
                                 <div className="col-md-6">
-                                    <label className="form-label">First Name</label>
+                                    <label className="form-label">Full Name</label>
                                     <input
                                         type="text"
                                         name="firstName"
                                         value={formData.firstName}
                                         onChange={handleChange}
                                         className="form-control"
-                                        placeholder="Enter your first name"
+                                        placeholder="Enter your Full name"
                                         required
                                     />
                                 </div>
@@ -117,15 +118,16 @@ export default function Contact() {
                                     />
                                 </div>
                                 <div className="col-md-6">
-                                    <label className="form-label">Company Name</label>
-                                    <input
-                                        type="text"
-                                        name="companyName"
-                                        value={formData.companyName}
-                                        onChange={handleChange}
-                                        className="form-control"
-                                        placeholder="Enter company name"
-                                    />
+                                    <label className="form-label">Type of Query</label>
+                                    <select className="form-control">
+                                        <option>Select</option>
+                                        <option value="1">General </option>
+                                        <option value="2">Business Related</option>
+                                        <option value="3">Career Related</option>
+                                        <option value="3">Investor Related</option>
+                                        <option value="3">Others</option>
+
+                                    </select>
                                 </div>
                             </div>
 

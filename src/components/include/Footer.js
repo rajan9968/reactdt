@@ -42,7 +42,7 @@ export default function Footer() {
                                         <li>
                                             <a href="#">
                                                 Independent Power
-                                                <br /> Producing
+                                                <br /> Producer
                                             </a>
                                         </li>
 

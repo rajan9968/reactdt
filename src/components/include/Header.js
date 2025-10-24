@@ -4,27 +4,24 @@ import { FaX } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+
     const [showMainOffcanvas, setShowMainOffcanvas] = useState(false);
-    const [showSubmenu, setShowSubmenu] = useState(false);
+    const [activeSubmenu, setActiveSubmenu] = useState(null); // 'about', 'business', etc.
     const headerRef = useRef(null);
 
     // Handle main offcanvas
-    const handleMainOffcanvasClose = () => setShowMainOffcanvas(false);
     const handleMainOffcanvasShow = () => setShowMainOffcanvas(true);
-
-    // Handle submenu offcanvas
-    const handleSubmenuOpen = (e) => {
-        e.preventDefault();
-        setShowSubmenu(true);
-    };
-
-    const handleSubmenuClose = () => {
-        setShowSubmenu(false);
-    };
-
-    const closeAllOffcanvas = () => {
-        setShowSubmenu(false);
+    const handleMainOffcanvasClose = () => {
         setShowMainOffcanvas(false);
+        setActiveSubmenu(null);
+    };
+
+    // Submenu controls
+    const openSubmenu = (name) => setActiveSubmenu(name);
+    const closeSubmenu = () => setActiveSubmenu(null);
+    const closeAllOffcanvas = () => {
+        setShowMainOffcanvas(false);
+        setActiveSubmenu(null);
     };
 
     // Scroll shrink logic
@@ -67,10 +64,10 @@ export default function Header() {
                                 <ul className="nav-links">
                                     <i className="uil uil-times navCloseBtn" />
                                     <li>
-                                        <Link to="/about">About Us</Link>
+                                        <Link to="/about-us">About Us</Link>
                                     </li>
                                     <li>
-                                        <Link to="/business">Business</Link>
+                                        <Link to="/pre-development">Business</Link>
                                     </li>
                                     <li>
                                         <Link to="/culture">Culture</Link>
@@ -79,7 +76,7 @@ export default function Header() {
                                         <Link to="/careers">Careers</Link>
                                     </li>
                                     <li>
-                                        <Link to="/contact">Contact</Link>
+                                        <Link to="/contact-us">Contact Us</Link>
                                     </li>
                                     <li>
                                         <a href="#" aria-label="Search">
@@ -113,7 +110,6 @@ export default function Header() {
                                 </div>
                             </div>
                         </div>
-
                         {/* Main Offcanvas */}
                         <Offcanvas
                             show={showMainOffcanvas}
@@ -121,29 +117,31 @@ export default function Header() {
                             placement="end"
                             className="custom-off"
                             style={{
-                                marginRight: showSubmenu ? "21em" : "0",
+                                marginRight: activeSubmenu ? "21em" : "0",
                                 transition: "margin-right 0.3s ease",
                             }}
                         >
                             <Offcanvas.Header className="justify-content-end">
-                                <button
-                                    type="button"
-                                    className="btn-clos text-reset custom-close"
-                                    onClick={handleMainOffcanvasClose}
-                                    aria-label="Close"
-                                    style={{ display: showSubmenu ? "none" : "block" }}
-                                >
-                                    <FaX className="fax-icon" />
-                                </button>
+                                {!activeSubmenu && (
+                                    <button
+                                        type="button"
+                                        className="btn-clos text-reset custom-close"
+                                        onClick={handleMainOffcanvasClose}
+                                        aria-label="Close"
+                                    >
+                                        <FaX className="fax-icon" />
+                                    </button>
+                                )}
                             </Offcanvas.Header>
 
                             <Offcanvas.Body>
                                 <div className="offcanvas-menu">
                                     <ul className="offcanvas-links">
+                                        {/* ABOUT US */}
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
                                                 <button
-                                                    onClick={handleSubmenuOpen}
+                                                    onClick={() => setActiveSubmenu("about")}
                                                     className="submenu-toggle"
                                                     style={{
                                                         background: "none",
@@ -153,24 +151,37 @@ export default function Header() {
                                                     }}
                                                 >
                                                     About Us
+                                                    <i className="fa fa-angle-right" />
                                                 </button>
-                                                <i className="fa fa-angle-right cross-icon" />
+
                                             </div>
                                         </li>
+
+                                        {/* BUSINESS */}
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <Link to="/business" onClick={closeAllOffcanvas}>
+                                                <button
+                                                    onClick={() => setActiveSubmenu("business")}
+                                                    className="submenu-toggle"
+                                                    style={{
+                                                        background: "none",
+                                                        border: "none",
+                                                        padding: 0,
+                                                        cursor: "pointer",
+                                                    }}
+                                                >
                                                     Business
-                                                </Link>
-                                                <i className="fa fa-angle-right cross-icon" />
+                                                    <i className="fa fa-angle-right" />
+                                                </button>
                                             </div>
                                         </li>
+
+                                        {/* REST OF YOUR LINKS */}
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
                                                 <Link to="/culture" onClick={closeAllOffcanvas}>
                                                     Culture
                                                 </Link>
-                                                <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
@@ -178,7 +189,6 @@ export default function Header() {
                                                 <Link to="/awards" onClick={closeAllOffcanvas}>
                                                     Awards
                                                 </Link>
-                                                <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
@@ -186,23 +196,42 @@ export default function Header() {
                                                 <Link to="/investors" onClick={closeAllOffcanvas}>
                                                     Investors
                                                 </Link>
-                                                <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <Link to="/newsroom" onClick={closeAllOffcanvas}>
+                                                <button
+                                                    onClick={() => setActiveSubmenu("newsroom")}
+                                                    className="submenu-toggle"
+                                                    style={{
+                                                        background: "none",
+                                                        border: "none",
+                                                        padding: 0,
+                                                        cursor: "pointer",
+                                                    }}
+                                                >
                                                     Newsroom
-                                                </Link>
-                                                <i className="fa fa-angle-right cross-icon" />
+                                                    <i className="fa fa-angle-right" />
+                                                </button>
+
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <Link to="/resources" onClick={closeAllOffcanvas}>
+                                                <button
+                                                    onClick={() => setActiveSubmenu("resources")}
+                                                    className="submenu-toggle"
+                                                    style={{
+                                                        background: "none",
+                                                        border: "none",
+                                                        padding: 0,
+                                                        cursor: "pointer",
+                                                    }}
+                                                >
                                                     Resources
-                                                </Link>
-                                                <i className="fa fa-angle-right cross-icon" />
+                                                    <i className="fa fa-angle-right" />
+                                                </button>
+
                                             </div>
                                         </li>
                                         <li>
@@ -210,15 +239,13 @@ export default function Header() {
                                                 <Link to="/careers" onClick={closeAllOffcanvas}>
                                                     Careers
                                                 </Link>
-                                                <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                         <li>
                                             <div className="menu-li d-flex align-items-center justify-content-between">
-                                                <Link to="/contact" onClick={closeAllOffcanvas}>
-                                                    Contact
+                                                <Link to="/contact-us" onClick={closeAllOffcanvas}>
+                                                    Contact Us
                                                 </Link>
-                                                <i className="fa fa-angle-right cross-icon" />
                                             </div>
                                         </li>
                                     </ul>
@@ -254,10 +281,10 @@ export default function Header() {
                             </Offcanvas.Body>
                         </Offcanvas>
 
-                        {/* Submenu Offcanvas */}
+                        {/* ABOUT US Submenu */}
                         <Offcanvas
-                            show={showSubmenu}
-                            onHide={handleSubmenuClose}
+                            show={activeSubmenu === "about"}
+                            onHide={() => setActiveSubmenu(null)}
                             placement="end"
                             className="custom-off submenu-off"
                         >
@@ -265,7 +292,7 @@ export default function Header() {
                                 <button
                                     type="button"
                                     className="btn-clos text-reset custom-close"
-                                    onClick={handleSubmenuClose}
+                                    onClick={() => setActiveSubmenu(null)}
                                     aria-label="Close"
                                 >
                                     <img src="assets/images/cross.svg" alt="" />
@@ -276,42 +303,153 @@ export default function Header() {
                                 <div className="offcanvas-menu">
                                     <ul className="offcanvas-links w-75">
                                         <li>
-                                            <div className="menu-li d-flex align-items-center justify-content-between border-0">
-                                                <Link
-                                                    to="/about-us"
-                                                    className="text-black"
-                                                    onClick={closeAllOffcanvas}
-                                                >
-                                                    Who We Are
-                                                </Link>
-                                            </div>
+                                            <Link to="/about-us" className="text-black" onClick={closeAllOffcanvas}>
+                                                Who We Are
+                                            </Link>
                                         </li>
                                         <li>
-                                            <div className="menu-li d-flex align-items-center justify-content-between border-0">
-                                                <Link
-                                                    to="/leadership-team"
-                                                    className="text-black"
-                                                    onClick={closeAllOffcanvas}
-                                                >
-                                                    Leadership
-                                                </Link>
-                                            </div>
+                                            <Link to="/leadership-team" className="text-black" onClick={closeAllOffcanvas}>
+                                                Leadership
+                                            </Link>
                                         </li>
                                         <li>
-                                            <div className="menu-li d-flex align-items-center justify-content-between border-0">
-                                                <Link
-                                                    to="/project-portfolio"
-                                                    className="text-black"
-                                                    onClick={closeAllOffcanvas}
-                                                >
-                                                    Project Portfolio
-                                                </Link>
-                                            </div>
+                                            <Link to="/project-portfolio" className="text-black" onClick={closeAllOffcanvas}>
+                                                Project Portfolio
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
                             </Offcanvas.Body>
                         </Offcanvas>
+
+                        {/* BUSINESS Submenu */}
+                        <Offcanvas
+                            show={activeSubmenu === "business"}
+                            onHide={() => setActiveSubmenu(null)}
+                            placement="end"
+                            className="custom-off submenu-off"
+                        >
+                            <Offcanvas.Header className="justify-content-end m-0">
+                                <button
+                                    type="button"
+                                    className="btn-clos text-reset custom-close"
+                                    onClick={() => setActiveSubmenu(null)}
+                                    aria-label="Close"
+                                >
+                                    <img src="assets/images/cross.svg" alt="" />
+                                </button>
+                            </Offcanvas.Header>
+
+                            <Offcanvas.Body>
+                                <div className="offcanvas-menu">
+                                    <ul className="offcanvas-links w-75">
+                                        <li>
+                                            <Link to="/pre-development" className="text-black" onClick={closeAllOffcanvas}>
+                                                Pre-Development EPC
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/epc-project" className="text-black" onClick={closeAllOffcanvas}>
+                                                Turnkey EPC Projects
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/grid-infrastructure" className="text-black" onClick={closeAllOffcanvas}>
+                                                Grid Infrastructure
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/independent-power-producer" className="text-black" onClick={closeAllOffcanvas}>
+                                                Independent Power Producer
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </Offcanvas.Body>
+                        </Offcanvas>
+                        {/* newsroom Submenu */}
+                        <Offcanvas
+                            show={activeSubmenu === "newsroom"}
+                            onHide={() => setActiveSubmenu(null)}
+                            placement="end"
+                            className="custom-off submenu-off"
+                        >
+                            <Offcanvas.Header className="justify-content-end m-0">
+                                <button
+                                    type="button"
+                                    className="btn-clos text-reset custom-close"
+                                    onClick={() => setActiveSubmenu(null)}
+                                    aria-label="Close"
+                                >
+                                    <img src="assets/images/cross.svg" alt="" />
+                                </button>
+                            </Offcanvas.Header>
+
+                            <Offcanvas.Body>
+                                <div className="offcanvas-menu">
+                                    <ul className="offcanvas-links w-75">
+                                        <li>
+                                            <Link to="/press-release" className="text-black" onClick={closeAllOffcanvas}>
+                                                Press Releases
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/media-coverages" className="text-black" onClick={closeAllOffcanvas}>
+                                                Media Coverage
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/media-resources" className="text-black" onClick={closeAllOffcanvas}>
+                                                Media Resources
+                                            </Link>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </Offcanvas.Body>
+                        </Offcanvas>
+                        {/* resources Submenu */}
+                        <Offcanvas
+                            show={activeSubmenu === "resources"}
+                            onHide={() => setActiveSubmenu(null)}
+                            placement="end"
+                            className="custom-off submenu-off"
+                        >
+                            <Offcanvas.Header className="justify-content-end m-0">
+                                <button
+                                    type="button"
+                                    className="btn-clos text-reset custom-close"
+                                    onClick={() => setActiveSubmenu(null)}
+                                    aria-label="Close"
+                                >
+                                    <img src="assets/images/cross.svg" alt="" />
+                                </button>
+                            </Offcanvas.Header>
+
+                            <Offcanvas.Body>
+                                <div className="offcanvas-menu">
+                                    <ul className="offcanvas-links w-75">
+                                        <li>
+                                            <Link to="/blogs" className="text-black" onClick={closeAllOffcanvas}>
+                                                Blogs
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/case-studies" className="text-black" onClick={closeAllOffcanvas}>
+                                                Case Studies
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/faqs" className="text-black" onClick={closeAllOffcanvas}>
+                                                FAQs
+                                            </Link>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </Offcanvas.Body>
+                        </Offcanvas>
+
                     </div>
                 </div>
             </div>

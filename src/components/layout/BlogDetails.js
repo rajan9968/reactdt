@@ -14,7 +14,7 @@ export default function BlogDetails() {
                         srcSet=""
                     />
                     <div className="container-fluid plr">
-                        <div className="leadership-banner-caption">
+                        <div className="leadership-banner-caption w-75">
                             <h2>Our Blogs</h2>
                             <ul className="path-women-empow">
                                 <li>
