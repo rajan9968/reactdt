@@ -11,35 +11,35 @@ export default function About() {
             title: 'Start of the Journey',
             description: 'Aiming to contribute 30 GW to India’s green energy future by 2030 through large- scale renewable projects, while strengthening our position as a key partner in achieving the nation’s sustainability goals.',
             employees: '10',
-            img: 'assets/images/timeline-1.png',
+            img: '/assets/images/timeline-1.png',
         },
         {
             year: '2019',
             title: 'New Milestone',
             description: 'Aiming to contribute 30 GW to India’s green energy future by 2030 through large- scale renewable projects, while strengthening our position as a key partner in achieving the nation’s sustainability goals.',
             employees: '20+',
-            img: 'assets/images/timeline-1.png',
+            img: '/assets/images/timeline-1.png',
         },
         {
             year: '2020 – 2021',
             title: 'Consolidation Phase',
             description: 'Aiming to contribute 30 GW to India’s green energy future by 2030 through large- scale renewable projects, while strengthening our position as a key partner in achieving the nation’s sustainability goals.',
             employees: '35',
-            img: 'assets/images/timeline-1.png',
+            img: '/assets/images/timeline-1.png',
         },
         {
             year: '2022',
             title: 'Global Growth',
             description: 'Aiming to contribute 30 GW to India’s green energy future by 2030 through large- scale renewable projects, while strengthening our position as a key partner in achieving the nation’s sustainability goals.',
             employees: '50+',
-            img: 'assets/images/timeline-1.png',
+            img: '/assets/images/timeline-1.png',
         },
         {
             year: '2024',
             title: 'Vision 2024',
             description: 'Aiming to contribute 30 GW to India’s green energy future by 2030 through large- scale renewable projects, while strengthening our position as a key partner in achieving the nation’s sustainability goals.',
             employees: '55+',
-            img: 'assets/images/timeline-1.png',
+            img: '/assets/images/timeline-1.png',
         },
     ];
     return (
@@ -48,7 +48,7 @@ export default function About() {
             <main>
                 <section className="about-banner position-relative wings-top-section">
                     <img
-                        src="assets/images/about-us-banner.png"
+                        src="/assets/images/about-us-banner.png"
                         alt="awards"
                         className="img-fluid desktop-banner"
                         srcSet=""
@@ -79,7 +79,7 @@ export default function About() {
                             <div className="col-lg-6">
                                 <div className="power-img">
                                     <img
-                                        src="assets/images/join-1.png"
+                                        src="/assets/images/join-1.png"
                                         className="img-fluid w-100 rounded"
                                         alt="Team working together"
                                     />
@@ -99,7 +99,7 @@ export default function About() {
                                 </div>
                                 <div className="d-flex align-items-end justify-content-end">
                                     <div className="group-icon">
-                                        <img src="assets/images/Group-icon.png" alt="Decorative group icon" />
+                                        <img src="/assets/images/Group-icon.png" alt="Decorative group icon" />
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@ export default function About() {
                             <div className="col-md-6 col-lg-4 col-6">
                                 <div className="card-custom">
                                     <img
-                                        src="assets/images/Vision-icon.png"
+                                        src="/assets/images/Vision-icon.png"
                                         className="card-image"
                                         alt="Turnkey EPC Projects"
                                     />
@@ -131,7 +131,7 @@ export default function About() {
                             <div className="col-md-6 col-lg-4 col-6">
                                 <div className="card-custom">
                                     <img
-                                        src="assets/images/mission-icon.png"
+                                        src="/assets/images/mission-icon.png"
                                         className="card-image"
                                         alt="Grid Infrastructure"
                                     />
@@ -148,7 +148,7 @@ export default function About() {
                             <div className="col-md-6 col-lg-4 col-6">
                                 <div className="card-custom">
                                     <img
-                                        src="assets/images/pur-icon.png"
+                                        src="/assets/images/pur-icon.png"
                                         className="card-image"
                                         alt="Independent Power Producer"
                                     />
@@ -175,7 +175,7 @@ export default function About() {
                             <div className="col-md-6 col-lg-3 col-6">
                                 <div className="card-custom">
                                     <img
-                                        src="assets/images/sustainability-icon.png"
+                                        src="/assets/images/sustainability-icon.png"
                                         className="card-image"
                                         alt="Pre-Development EPC"
                                     />
@@ -192,7 +192,7 @@ export default function About() {
                             <div className="col-md-6 col-lg-3 col-6">
                                 <div className="card-custom">
                                     <img
-                                        src="assets/images/innovation-icon.png"
+                                        src="/assets/images/innovation-icon.png"
                                         className="card-image"
                                         alt="Turnkey EPC Projects"
                                     />
@@ -208,7 +208,7 @@ export default function About() {
                             <div className="col-md-6 col-lg-3 col-6">
                                 <div className="card-custom">
                                     <img
-                                        src="assets/images/collaboration-icon.png"
+                                        src="/assets/images/collaboration-icon.png"
                                         className="card-image"
                                         alt="Grid Infrastructure"
                                     />
@@ -223,7 +223,7 @@ export default function About() {
                             <div className="col-md-6 col-lg-3 col-6">
                                 <div className="card-custom">
                                     <img
-                                        src="assets/images/tntegrity-icon.png"
+                                        src="/assets/images/tntegrity-icon.png"
                                         className="card-image"
                                         alt="Independent Power Producer"
                                     />
@@ -249,7 +249,7 @@ export default function About() {
                                 <div className="timeline-item-wrapper" key={index}>
                                     <div className="timeline-dot"></div> {/* <-- Circle marker */}
                                     <div className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
-                                        <div className="timeline-content p-3 mb-5">
+                                        <div className="timeline-content pt-0 p-3 mb-5">
                                             <h4 className="year">{item.year}</h4>
                                             <h5>{item.title}</h5>
                                             <p>{item.description}</p>
@@ -275,7 +275,7 @@ export default function About() {
                             <div className='col-lg-6'>
                                 <div className='text-center'>
                                     <img
-                                        src="assets/images/our-presence-map.png"
+                                        src="/assets/images/our-presence-map.png"
                                         alt="awards"
                                         className="img-fluid"
                                         srcSet=""

@@ -49,7 +49,7 @@ export default function Footer() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h5>Culture</h5>
+                                    <h5>Resources</h5>
                                     <ul className="footer-links">
                                         <li>
                                             <a href="#">Blogs</a>

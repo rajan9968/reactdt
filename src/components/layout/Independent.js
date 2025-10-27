@@ -9,9 +9,9 @@ import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 
 export default function Independent() {
     const slides2 = [
-        { img: "assets/images/join-1.png", alt: "Join 1" },
-        { img: "assets/images/join-2.png", alt: "Join 2" },
-        { img: "assets/images/join-2.png", alt: "Join 2" },
+        { img: "/assets/images/join-1.png", alt: "Join 1" },
+        { img: "/assets/images/join-2.png", alt: "Join 2" },
+        { img: "/assets/images/join-2.png", alt: "Join 2" },
         // add more slides here
     ];
     return (
@@ -20,14 +20,14 @@ export default function Independent() {
             <main>
                 <section className="leadership-banner position-relative wings-top-section">
                     <img
-                        src="assets/images/grid-banner.png"
+                        src="/assets/images/grid-banner.png"
                         alt="awards"
                         className="img-fluid desktop-banner"
                         srcSet=""
                     />
                     <div className="container-fluid plr">
                         <div className="leadership-banner-caption">
-                            <h2>Grid Infrastructure</h2>
+                            <h2>Independent Power Producer</h2>
                             <ul className="path-women-empow">
                                 <li>
                                     <a href="index.php">Home</a>
@@ -35,7 +35,7 @@ export default function Independent() {
                                 </li>
                                 <li className="text-white">/</li>
                                 <li>
-                                    <a href="#">Grid Infrastructure</a>
+                                    <a href="#">Independent Power Producer</a>
                                 </li>
                             </ul>
                         </div>
@@ -55,7 +55,7 @@ export default function Independent() {
                             <div className="col-lg-6">
                                 <div className="power-img">
                                     <img
-                                        src="assets/images/pro-1.png"
+                                        src="/assets/images/pro-1.png"
                                         className="img-fluid w-100"
                                         alt=""
                                         srcSet=""
@@ -73,7 +73,7 @@ export default function Independent() {
                                 <div className="d-flex align-items-end justify-content-end">
 
                                     <div className="group-icon">
-                                        <img src="assets/images/business-icon.png" alt="" srcSet="" />
+                                        <img src="/assets/images/business-icon.png" alt="" srcSet="" />
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@ export default function Independent() {
                             <div className="col-lg-4">
                                 <div className="news-box rounded">
                                     <div className="new-image">
-                                        <img src="assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
+                                        <img src="/assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
                                     </div>
                                     <div className="news-content rounded-bottom">
                                         <p className="award-title">Lorem ipsum</p>
@@ -131,7 +131,7 @@ export default function Independent() {
                             <div className="col-lg-4">
                                 <div className="news-box rounded">
                                     <div className="new-image">
-                                        <img src="assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
+                                        <img src="/assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
                                     </div>
                                     <div className="news-content rounded-bottom">
                                         <p className="award-title">Lorem ipsum</p>
@@ -144,7 +144,7 @@ export default function Independent() {
                             <div className="col-lg-4">
                                 <div className="news-box rounded">
                                     <div className="new-image">
-                                        <img src="assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
+                                        <img src="/assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
                                     </div>
                                     <div className="news-content rounded-bottom">
                                         <p className="award-title">Lorem ipsum</p>

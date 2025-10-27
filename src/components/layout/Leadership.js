@@ -11,7 +11,7 @@ export default function Leadership() {
             id: 1,
             name: "Mr. Varchasvi Gagal",
             position: "CEO & MD",
-            image: "assets/images/team-1.png",
+            image: "/assets/images/team-1.png",
             description:
                 "Bringing dynamic vision and a relentless drive for excellence, Mr. Singh continues to set industry benchmarks, leading Datta Infra's growth, innovation, and stakeholder value creation.",
         },
@@ -19,7 +19,7 @@ export default function Leadership() {
             id: 2,
             name: "Mr. Kuldeep Singh",
             position: "Chairman",
-            image: "assets/images/team-2.png",
+            image: "/assets/images/team-2.png",
             description:
                 "Leading Datta Infra with innovation and strategic insight, Mr. Gagal drives growth and sets new standards for excellence in the infrastructure sector.",
         }
@@ -42,7 +42,7 @@ export default function Leadership() {
             <main>
                 <section className="leadership-banner position-relative wings-top-section">
                     <img
-                        src="assets/images/leadership-banner.png"
+                        src="/assets/images/leadership-banner.png"
                         alt="awards"
                         className="img-fluid desktop-banner"
                         srcSet=""

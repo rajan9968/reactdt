@@ -10,7 +10,7 @@ export default function ProjectPortfolio() {
             <main>
                 <section className="leadership-banner position-relative wings-top-section">
                     <img
-                        src="assets/images/project-profolio-banner.png"
+                        src="/assets/images/project-profolio-banner.png"
                         alt="awards"
                         className="img-fluid desktop-banner"
                         srcSet=""
@@ -46,7 +46,7 @@ export default function ProjectPortfolio() {
                                 {/* <Link to="/project-details" className="text-black text-decoration-none"> */}
                                 <div className="news-box rounded">
                                     <div className="new-image">
-                                        <img src="assets/images/project-1.png" className="img-fluid rounded" alt="news" />
+                                        <img src="/assets/images/project-1.png" className="img-fluid rounded" alt="news" />
                                     </div>
                                     <div className="news-content rounded-bottom">
                                         <p className="award-title mb-0">Bikaner, Rajasthan</p>

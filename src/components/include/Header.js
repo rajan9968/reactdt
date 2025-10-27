@@ -47,7 +47,7 @@ export default function Header() {
                         {/* Logo */}
                         <div className="col-lg-4">
                             <Link to="/" className="logo">
-                                <img src="assets/images/datta-logo.png" alt="logo" />
+                                <img src="/assets/images/datta-logo.png" alt="logo" />
                             </Link>
                         </div>
 
@@ -63,12 +63,29 @@ export default function Header() {
                             <div className="d-flex justify-content-end align-items-center h-100">
                                 <ul className="nav-links">
                                     <i className="uil uil-times navCloseBtn" />
-                                    <li>
-                                        <Link to="/about-us">About Us</Link>
+                                    <li className="dropdown">
+                                        <Link to="#" className="dropdown-toggle">
+                                            About Us
+                                        </Link>
+                                        <ul className="dropdown-menu">
+                                            <li><Link to="/about-us/who-we-are" className="text-color2">Who We Are</Link></li>
+                                            <li><Link to="/about-us/leadership-team" className="text-color2">Leadership Team</Link></li>
+                                            <li><Link to="/about-us/project-portfolio" className="text-color2">Project Portfolio</Link></li>
+                                        </ul>
                                     </li>
-                                    <li>
-                                        <Link to="/pre-development">Business</Link>
+
+                                    <li className="dropdown">
+                                        <Link to="#" className="dropdown-toggle">
+                                            Business
+                                        </Link>
+                                        <ul className="dropdown-menu">
+                                            <li><Link to="/business/pre-development" className="text-color2">Pre-Development EPC</Link></li>
+                                            <li><Link to="/business/epc-project" className="text-color2">Turnkey EPC Projects</Link></li>
+                                            <li><Link to="/business/grid-infrastructure" className="text-color2">Grid Infrastructure</Link></li>
+                                            <li><Link to="/business/independent-power-producer" className="text-color2">Independent Power Producer</Link></li>
+                                        </ul>
                                     </li>
+
                                     <li>
                                         <Link to="/culture">Culture</Link>
                                     </li>
@@ -95,7 +112,7 @@ export default function Header() {
                                                 cursor: "pointer",
                                             }}
                                         >
-                                            <img src="assets/images/menu-icon.jpg" alt="" />
+                                            <img src="/assets/images/menu-icon.jpg" alt="" />
                                         </button>
                                     </li>
                                 </ul>
@@ -303,17 +320,17 @@ export default function Header() {
                                 <div className="offcanvas-menu">
                                     <ul className="offcanvas-links w-75">
                                         <li>
-                                            <Link to="/about-us" className="text-black" onClick={closeAllOffcanvas}>
+                                            <Link to="/about-us/who-we-are" className="text-black" onClick={closeAllOffcanvas}>
                                                 Who We Are
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="/leadership-team" className="text-black" onClick={closeAllOffcanvas}>
+                                            <Link to="/about-us/leadership-team" className="text-black" onClick={closeAllOffcanvas}>
                                                 Leadership
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="/project-portfolio" className="text-black" onClick={closeAllOffcanvas}>
+                                            <Link to="/about-us/project-portfolio" className="text-black" onClick={closeAllOffcanvas}>
                                                 Project Portfolio
                                             </Link>
                                         </li>
@@ -344,22 +361,22 @@ export default function Header() {
                                 <div className="offcanvas-menu">
                                     <ul className="offcanvas-links w-75">
                                         <li>
-                                            <Link to="/pre-development" className="text-black" onClick={closeAllOffcanvas}>
+                                            <Link to="/business/pre-development" className="text-black" onClick={closeAllOffcanvas}>
                                                 Pre-Development EPC
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="/epc-project" className="text-black" onClick={closeAllOffcanvas}>
+                                            <Link to="/business/epc-project" className="text-black" onClick={closeAllOffcanvas}>
                                                 Turnkey EPC Projects
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="/grid-infrastructure" className="text-black" onClick={closeAllOffcanvas}>
+                                            <Link to="/business/grid-infrastructure" className="text-black" onClick={closeAllOffcanvas}>
                                                 Grid Infrastructure
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link to="/independent-power-producer" className="text-black" onClick={closeAllOffcanvas}>
+                                            <Link to="/business/independent-power-producer" className="text-black" onClick={closeAllOffcanvas}>
                                                 Independent Power Producer
                                             </Link>
                                         </li>

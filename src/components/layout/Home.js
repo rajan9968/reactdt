@@ -233,7 +233,7 @@ export default function Home() {
                         <div className="row g-5">
                             {/* Pre-Development EPC */}
                             <div className="col-md-6 col-lg-3 col-6">
-                                <Link to="/pre-development">
+                                <Link to="/business/pre-development">
                                     <div className="card-custom">
                                         <img
                                             src="assets/images/bussniess-icon-1.png"
@@ -250,7 +250,7 @@ export default function Home() {
                             </div>
                             {/* Turnkey EPC Projects */}
                             <div className="col-md-6 col-lg-3 col-6">
-                                <Link to="/epc-project">
+                                <Link to="/business/epc-project">
                                     <div className="card-custom">
                                         <img
                                             src="assets/images/bussniess-icon-2.png"
@@ -267,7 +267,7 @@ export default function Home() {
                             </div>
                             {/* Grid Infrastructure */}
                             <div className="col-md-6 col-lg-3 col-6">
-                                <Link to="/grid-infrastructure">
+                                <Link to="/business/grid-infrastructure">
                                     <div className="card-custom">
                                         <img
                                             src="assets/images/bussniess-icon-3.png"
@@ -284,7 +284,7 @@ export default function Home() {
                             </div>
                             {/* Independent Power Producer */}
                             <div className="col-md-6 col-lg-3 col-6">
-                                <Link to="/independent-power-producer">
+                                <Link to="/business/independent-power-producer">
                                     <div className="card-custom">
                                         <img
                                             src="assets/images/bussniess-icon-4.png"

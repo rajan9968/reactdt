@@ -77,7 +77,7 @@ export default function Contact() {
                 </section>
                 <section>
                     <div className="container-fluid plr mt-5">
-                        <form onSubmit={handleSubmit}>
+                        <form className="contect-form" onSubmit={handleSubmit}>
                             <div className="row mb-3">
                                 <div className="col-md-6">
                                     <label className="form-label">Full Name</label>

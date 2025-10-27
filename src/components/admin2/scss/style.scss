@@ -7,7 +7,12 @@
 body {
   background-color: var(--cui-tertiary-bg);
 }
-
+.custom-button {
+  background-color: #cda349;
+}
+.custom-button:hover {
+  background-color: #d1aa57;
+}
 .wrapper {
   width: 100%;
   padding-inline: var(--cui-sidebar-occupy-start, 0)

@@ -18,8 +18,11 @@ import { sygnet } from '../assets/brand/sygnet'
 
 // sidebar nav config
 import navigation from '../_nav'
+import { getUserData } from "../Utils/utils";
+
 
 const AppSidebar = () => {
+  getUserData();
   const dispatch = useDispatch()
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
   const sidebarShow = useSelector((state) => state.sidebarShow)

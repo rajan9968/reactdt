@@ -8,9 +8,9 @@ import 'swiper/css/navigation';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 export default function EPCProject() {
     const slides2 = [
-        { img: "assets/images/join-1.png", alt: "Join 1" },
-        { img: "assets/images/join-2.png", alt: "Join 2" },
-        { img: "assets/images/join-2.png", alt: "Join 2" },
+        { img: "/assets/images/join-1.png", alt: "Join 1" },
+        { img: "/assets/images/join-2.png", alt: "Join 2" },
+        { img: "/assets/images/join-2.png", alt: "Join 2" },
         // add more slides here
     ];
     return (
@@ -19,7 +19,7 @@ export default function EPCProject() {
             <main>
                 <section className="leadership-banner position-relative wings-top-section">
                     <img
-                        src="assets/images/business-banner.png"
+                        src="/assets/images/business-banner.png"
                         alt="awards"
                         className="img-fluid desktop-banner"
                         srcSet=""
@@ -53,7 +53,7 @@ export default function EPCProject() {
                             <div className="col-lg-6">
                                 <div className="power-img">
                                     <img
-                                        src="assets/images/pro-1.png"
+                                        src="/assets/images/pro-1.png"
                                         className="img-fluid w-100"
                                         alt=""
                                         srcSet=""
@@ -71,7 +71,7 @@ export default function EPCProject() {
                                 <div className="d-flex align-items-end justify-content-end">
 
                                     <div className="group-icon">
-                                        <img src="assets/images/business-icon.png" alt="" srcSet="" />
+                                        <img src="/assets/images/business-icon.png" alt="" srcSet="" />
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@ export default function EPCProject() {
                             <div className="col-lg-4">
                                 <div className="news-box rounded">
                                     <div className="new-image">
-                                        <img src="assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
+                                        <img src="/assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
                                     </div>
                                     <div className="news-content rounded-bottom">
                                         <p className="award-title">Lorem ipsum</p>
@@ -129,7 +129,7 @@ export default function EPCProject() {
                             <div className="col-lg-4">
                                 <div className="news-box rounded">
                                     <div className="new-image">
-                                        <img src="assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
+                                        <img src="/assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
                                     </div>
                                     <div className="news-content rounded-bottom">
                                         <p className="award-title">Lorem ipsum</p>
@@ -142,7 +142,7 @@ export default function EPCProject() {
                             <div className="col-lg-4">
                                 <div className="news-box rounded">
                                     <div className="new-image">
-                                        <img src="assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
+                                        <img src="/assets/images/news-3.jpg" className="img-fluid rounded" alt="news" />
                                     </div>
                                     <div className="news-content rounded-bottom">
                                         <p className="award-title">Lorem ipsum</p>
