@@ -48,7 +48,7 @@ export default function Contact() {
                     />
                     <div className="container-fluid plr">
                         <div className="leadership-banner-caption">
-                            <h2>Our Contact</h2>
+                            <h2>Contact Us</h2>
                             <ul className="path-women-empow">
                                 <li>
                                     <a href="index.php">Home</a>
@@ -56,7 +56,7 @@ export default function Contact() {
                                 </li>
                                 <li className="text-white">/</li>
                                 <li>
-                                    <a href="#">Contact</a>
+                                    <a href="#">Contact Us</a>
                                 </li>
                             </ul>
                         </div>

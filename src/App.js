@@ -39,6 +39,7 @@ import Investors from './components/layout/Investors'
 // Lazy-loaded CoreUI components
 const DefaultLayout = React.lazy(() => import('../src/components/admin2/layout/DefaultLayout'))
 const Register = React.lazy(() => import('../src/components/admin2/views/pages/register/Register'))
+const Login = React.lazy(() => import('../src/components/admin2/views/pages/login/Login'))
 const Page404 = React.lazy(() => import('../src/components/admin2/views/pages/page404/Page404'))
 const Page500 = React.lazy(() => import('../src/components/admin2/views/pages/page500/Page500'))
 
@@ -90,7 +91,7 @@ const App = () => {
           <Route path="/careers" element={<Career />} />
           <Route path="/investors" element={<Investors />} />
           {/* Admin Entry Point */}
-          <Route path="/admin" element={<Register />} />
+          <Route path="/admin" element={<Login />} />
         </Routes>
       </BrowserRouter>
 
@@ -102,12 +103,12 @@ const App = () => {
           </div>
         }
       >
-        <BrowserRouter basename="/admin-panel">
+        <BrowserRouter basename="/admin">
           <Routes>
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/404" element={<Page404 />} />
             <Route exact path="/500" element={<Page500 />} />
-            <Route path="*" element={<DefaultLayout />} />
+            {/* <Route path="*" element={<DefaultLayout />} /> */}
           </Routes>
         </BrowserRouter>
       </Suspense>
