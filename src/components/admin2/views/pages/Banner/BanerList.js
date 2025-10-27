@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 import { cilPlus, cilPencil, cilTrash } from '@coreui/icons'
 import CIcon from '@coreui/icons-react'
 import { toast } from 'react-toastify';
-import axios from "axios";
 import api from '../../../../../api/axiosInstance';
 
 

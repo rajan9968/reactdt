@@ -7,7 +7,6 @@ import '../../../../admin2/scss/style.scss'
 import '../../../../admin2/scss/examples.scss'
 import '../../../../admin2/scss/custom.css'
 import { Link } from 'react-router-dom'
-import axios from 'axios';
 import api from '../../../../../api/axiosInstance';
 import { toast } from 'react-toastify';
 import { useNavigate, useLocation } from 'react-router-dom';
