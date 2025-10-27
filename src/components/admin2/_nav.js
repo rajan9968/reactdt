@@ -61,6 +61,87 @@ const _nav = [
       },
     ],
   },
+  {
+    component: CNavGroup,
+    name: 'About Page',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Banner',
+        to: '/admin/about-banner'
+      },
+      {
+        component: CNavItem,
+        name: 'Company Overview',
+        to: '/admin/overview',
+      },
+      {
+        component: CNavItem,
+        name: 'Purpose section',
+        to: '/admin/purpose',
+      },
+      {
+        component: CNavItem,
+        name: 'Core Values',
+        to: '/admin/core-values',
+      },
+      {
+        component: CNavItem,
+        name: 'Timeline',
+        to: '/admin/timelines',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Leadership Page',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Banner',
+        to: '/admin/leadership'
+      },
+      {
+        component: CNavItem,
+        name: 'Key Management',
+        to: '/admin/management',
+      },
+    ],
+  },
+  {
+    component: CNavGroup,
+    name: 'Project Portfolio Page',
+    to: '/base',
+    icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Banner',
+        to: '/admin/project-portfolio'
+      },
+      {
+        component: CNavItem,
+        name: 'Portfolio Overview',
+        to: '/admin/portfolio-overview',
+      },
+    ],
+  },
+  {
+    component: CNavItem,
+    name: 'Business Page',
+    to: '/admin/businesses',
+    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+  },
+  {
+    component: CNavItem,
+    name: 'Culture Page',
+    to: '/admin/cultures',
+    icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+  },
 ]
 
 export default _nav

@@ -65,7 +65,50 @@ const EditPortfolio = React.lazy(() => import('../src/components/admin2/views/pa
 const HomeCareer = React.lazy(() => import('../src/components/admin2/views/pages/Homepage/Careers/Careers'))
 const AddCareer = React.lazy(() => import('../src/components/admin2/views/pages/Homepage/Careers/AddCareer'))
 const EditCareer = React.lazy(() => import('../src/components/admin2/views/pages/Homepage/Careers/EditCareer'))
-
+// About Page 
+const AboutList = React.lazy(() => import('../src/components/admin2/views/pages/About/AboutOne'))
+const AddAbout = React.lazy(() => import('../src/components/admin2/views/pages/About/AddAboutBanner'))
+const EditAboutBanner = React.lazy(() => import('../src/components/admin2/views/pages/About/EditAboutBanner'))
+// Company Overview
+const ComOne = React.lazy(() => import('../src/components/admin2/views/pages/About/CompanyOverview/ComOne'))
+const AddComBanner = React.lazy(() => import('../src/components/admin2/views/pages/About/CompanyOverview/AddComBanner'))
+const EditComBanner = React.lazy(() => import('../src/components/admin2/views/pages/About/CompanyOverview/EditComBanner'))
+// purpose
+const PurposeList = React.lazy(() => import('../src/components/admin2/views/pages/About/Purpose/PurposeOne'))
+const AddPurpose = React.lazy(() => import('../src/components/admin2/views/pages/About/Purpose/Addpurpose'))
+const EditPurposeBanner = React.lazy(() => import('../src/components/admin2/views/pages/About/Purpose/Editpurpose'))
+// core values
+const CoreValuesOne = React.lazy(() => import('../src/components/admin2/views/pages/About/CoreValues/CoreValuesOne'))
+const AddcoreValues = React.lazy(() => import('../src/components/admin2/views/pages/About/CoreValues/AddcoreValues'))
+const EditcoreValues = React.lazy(() => import('../src/components/admin2/views/pages/About/CoreValues/EditcoreValues'))
+// Timeline
+const TimelineOne = React.lazy(() => import('../src/components/admin2/views/pages/About/Timeline/TimelineOne'))
+const AddTimeline = React.lazy(() => import('../src/components/admin2/views/pages/About/Timeline/AddTimeline'))
+const EditTimeline = React.lazy(() => import('../src/components/admin2/views/pages/About/Timeline/EditTimeline'))
+// leadership
+const LeadershipOne = React.lazy(() => import('../src/components/admin2/views/pages/About/Leadership/leadershipOne'))
+const Addleadership = React.lazy(() => import('../src/components/admin2/views/pages/About/Leadership/Addleadership'))
+const Editleadership = React.lazy(() => import('../src/components/admin2/views/pages/About/Leadership/Editleadership'))
+// management
+const ManagementOne = React.lazy(() => import('../src/components/admin2/views/pages/About/KeyManagement/managementOne'))
+const Addmanagement = React.lazy(() => import('../src/components/admin2/views/pages/About/KeyManagement/Addmanagement'))
+const Editmanagement = React.lazy(() => import('../src/components/admin2/views/pages/About/KeyManagement/Editmanagement'))
+// Project Portfolio
+const ProjectOne = React.lazy(() => import('../src/components/admin2/views/pages/About/ProjectPortfolio/ProjectOne'))
+const AddProject = React.lazy(() => import('../src/components/admin2/views/pages/About/ProjectPortfolio/AddProject'))
+const EditProject = React.lazy(() => import('../src/components/admin2/views/pages/About/ProjectPortfolio/EditProject'))
+// Portfolio oVERVIEW
+const PortfolioOne = React.lazy(() => import('../src/components/admin2/views/pages/About/PortfolioOverview/PortfolioOne'))
+const AddAboutPortfolio = React.lazy(() => import('../src/components/admin2/views/pages/About/PortfolioOverview/AddPortfolio '))
+const EditAboutPortfolio = React.lazy(() => import('../src/components/admin2/views/pages/About/PortfolioOverview/EditPortfolio '))
+// Business
+const PreDevelopmentList = React.lazy(() => import('./components/admin2/views/pages/Business/PreDevelopment/Banner/ListPreDevelopment'))
+const AddPreDevelopment = React.lazy(() => import('../src/components/admin2/views/pages/Business/PreDevelopment/Banner/AddPreDevelopment'))
+const EditPreDevelopment = React.lazy(() => import('../src/components/admin2/views/pages/Business/PreDevelopment/Banner/EditPreDevelopment'))
+// Culture
+const ListCulture = React.lazy(() => import('./components/admin2/views/pages/Culture/ListCulture'))
+const AddCulture = React.lazy(() => import('../src/components/admin2/views/pages/Culture/AddCulture'))
+const EditCulture = React.lazy(() => import('../src/components/admin2/views/pages/Culture/EditCulture'))
 
 
 const App = () => {
@@ -152,6 +195,51 @@ const App = () => {
             <Route path="/admin/careers" element={<HomeCareer />} />
             <Route path="/admin/add-career" element={<AddCareer />} />
             <Route path="/admin/edit-career" element={<EditCareer />} />
+            {/* About  */}
+            <Route path="/admin/about-banner" element={<AboutList />} />
+            <Route path="/admin/add-about-banner" element={<AddAbout />} />
+            <Route path="/admin/edit-about-banner" element={<EditAboutBanner />} />
+            {/* Company Overview */}
+            <Route path="/admin/overview" element={<ComOne />} />
+            <Route path="/admin/add-com-banner" element={<AddComBanner />} />
+            <Route path="/admin/edit-com-banner" element={<EditComBanner />} />
+            {/* Purpose */}
+            <Route path="/admin/purpose" element={<PurposeList />} />
+            <Route path="/admin/add-purpose" element={<AddPurpose />} />
+            <Route path="/admin/edit-purpose" element={<EditPurposeBanner />} />
+            {/* core values */}
+            <Route path="/admin/core-values" element={<CoreValuesOne />} />
+            <Route path="/admin/add-core-values" element={<AddcoreValues />} />
+            <Route path="/admin/edit-core-values" element={<EditcoreValues />} />
+            {/* Timeline  */}
+            <Route path="/admin/timelines" element={<TimelineOne />} />
+            <Route path="/admin/add-timeline" element={<AddTimeline />} />
+            <Route path="/admin/edit-timeline" element={<EditTimeline />} />
+            {/* leadership */}
+            <Route path="/admin/leadership" element={<LeadershipOne />} />
+            <Route path="/admin/add-leadership" element={<Addleadership />} />
+            <Route path="/admin/edit-leadership" element={<Editleadership />} />
+            {/* management */}
+            <Route path="/admin/management" element={<ManagementOne />} />
+            <Route path="/admin/add-management" element={<Addmanagement />} />
+            <Route path="/admin/edit-management" element={<Editmanagement />} />
+            {/* ProjectPortfolio */}
+            <Route path="/admin/project-portfolio" element={<ProjectOne />} />
+            <Route path="/admin/add-project-portfolio" element={<AddProject />} />
+            <Route path="/admin/edit-project-portfolio" element={<EditProject />} />
+            {/* Portfolio oVERVIEW */}
+            <Route path="/admin/portfolio-overview" element={<PortfolioOne />} />
+            <Route path="/admin/add-portfolio-overview" element={<AddAboutPortfolio />} />
+            <Route path="/admin/edit-portfolio-overview" element={<EditAboutPortfolio />} />
+            {/* Business  */}
+            <Route path="/admin/businesses" element={<PreDevelopmentList />} />
+            <Route path="/admin/add-pre-development-epc" element={<AddPreDevelopment />} />
+            <Route path="/admin/edit-pre-development-epc" element={<EditPreDevelopment />} />
+            {/* Culture */}
+            <Route path="/admin/cultures" element={<ListCulture />} />
+            <Route path="/admin/add-culture" element={<AddCulture />} />
+            <Route path="/admin/edit-culture" element={<EditCulture />} />
+
           </Routes>
         </Suspense>
       </BrowserRouter>
